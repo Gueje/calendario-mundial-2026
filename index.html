@@ -9,37 +9,41 @@
 
   /* ══════════════════════════════════════════
      TOKENS — identidad FIFA World Cup 26™
-     Fuente: IP Guidelines June 2024 v2.0
+     Paleta ajustada para legibilidad y armonía
   ══════════════════════════════════════════ */
   :root {
-    /* Paleta oficial FWC 26 */
-    --negro:      #000000;
-    --blanco:     #FFFFFF;
-    --cian:       #00FFC8;   /* acento principal, fondo encabezado */
-    --amarillo:   #FFE500;   /* acento secundario */
-    --rojo:       #FF3B2F;   /* acento terciario */
-    --azul-vivo:  #0057FF;
-    --verde-vivo: #00B140;
+    /* Encabezado — se mantiene oscuro */
+    --bg-encabezado: #0A0F2B;
 
-    /* Superficies */
-    --bg-pagina:   #0A0A0A;  /* negro casi puro */
-    --bg-dia:      #111111;  /* tarjeta día */
-    --bg-dia-borde:#1E1E1E;
-    --bg-elim:     #161616;
-    --bg-leyenda:  #000000;
+    /* Superficies claras */
+    --bg-pagina:    #F2F4F7;
+    --bg-dia:       #FFFFFF;
+    --bg-dia-cab:   #1A2140;
+    --bg-dia-col:   #0A0F2B;
+    --bg-elim:      #F8F9FC;
+    --bg-fase:      #0A0F2B;
+    --bg-dia-borde: #D8DCE6;
+    --linea:        #D8DCE6;
 
-    /* Texto */
-    --texto-base:  #FFFFFF;
-    --texto-suave: rgba(255,255,255,0.45);
-    --linea:       rgba(255,255,255,0.10);
+    /* Acentos — usables tanto sobre claro como sobre oscuro */
+    --cian:         #FCD116;   /* amarillo FWC en cabeceras oscuras (dia-fecha, fase) */
+    --cian-dim:     rgba(26,33,64,0.08);
+    --amarillo:     #1A2140;   /* para hora: azul oscuro sobre fondo blanco */
+    --blanco:       #FFFFFF;
 
-    /* Canales (se mantienen reconocibles) */
-    --c-caracol:   #E8300A;
-    --c-rcn:       #005FA8;
-    --c-dsports:   #0099D6;
-    --c-disney:    #1A3A6E;
-    --c-win:       #FF6B00;
-    --c-paramount: #003087;
+    /* Texto sobre fondo claro */
+    --texto-base:   #1A1E2E;
+    --texto-medio:  #1A1E2E;
+    --texto-suave:  #5A6075;
+    --texto-muted:  #8A90A0;
+
+    /* Canales */
+    --c-caracol:    #E8300A;
+    --c-rcn:        #005FA8;
+    --c-dsports:    #0099D6;
+    --c-disney:     #1A3A6E;
+    --c-win:        #FF6B00;
+    --c-paramount:  #003087;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,11 +57,11 @@
   }
 
   /* ══════════════════════════════════════════
-     CABECERA — negro + cian + emblema SVG
+     CABECERA
   ══════════════════════════════════════════ */
   .encabezado {
-    background: var(--negro);
-    border-bottom: 3px solid var(--cian);
+    background: var(--bg-encabezado);
+    border-bottom: 2px solid var(--cian);
     color: var(--blanco);
     padding: 18px 24px 14px;
     display: flex;
@@ -80,7 +84,7 @@
     font-size: 10px;
     font-weight: 700;
     font-style: normal;
-    color: rgba(255,255,255,0.5);
+    color: #FFFFFF;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -88,14 +92,13 @@
   .encabezado-meta {
     text-align: right;
     font-size: 10.5px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.6;
+    color: rgba(255,255,255,0.90);
+    line-height: 1.65;
   }
   .encabezado-meta strong {
-    color: var(--amarillo);
+    color: #FFFFFF;
     font-weight: 700;
   }
-  /* Contenedor del logo: supertítulo + SVG */
   .encabezado-logo-bloque {
     display: flex;
     flex-direction: column;
@@ -112,18 +115,18 @@
     color: var(--cian);
     white-space: nowrap;
   }
-  /* Contenedor del emblema SVG */
   .emblema-svg {
     display: block;
     width: 120px;
     height: auto;
+    opacity: 0.90;  /* logo menos agresivo sobre fondo oscuro */
   }
 
   /* ══════════════════════════════════════════
      LEYENDA CANALES
   ══════════════════════════════════════════ */
   .leyenda {
-    background: var(--negro);
+    background: var(--bg-encabezado);
     border-bottom: 1px solid var(--linea);
     padding: 8px 24px;
     display: flex;
@@ -137,7 +140,7 @@
     font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--cian);
+    color: rgba(255,255,255,0.90);
     margin-right: 4px;
   }
   .tag {
@@ -149,7 +152,8 @@
     font-weight: 700;
     font-size: 10px;
     letter-spacing: 0.3px;
-    color: var(--blanco);
+    color: rgba(255,255,255,0.92);
+    opacity: 0.90;
   }
   .tag.caracol   { background: var(--c-caracol); }
   .tag.rcn       { background: var(--c-rcn); }
@@ -159,7 +163,7 @@
   .tag.paramount { background: var(--c-paramount); }
   .nota-libre {
     font-size: 9.5px;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.35);
     margin-left: auto;
     font-style: italic;
   }
@@ -179,24 +183,25 @@
   ══════════════════════════════════════════ */
   .dia {
     background: var(--bg-dia);
-    border-radius: 0;
+    border-radius: 3px;
     overflow: hidden;
     border: 1px solid var(--bg-dia-borde);
-    box-shadow: none;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
   .dia.col-partido {
     border-left: 3px solid var(--amarillo);
   }
   .dia.col-partido .dia-cabecera {
-    background: #141200;
+    background: var(--bg-dia-col);
+    border-bottom-color: rgba(240,200,0,0.20);
   }
   .dia-cabecera {
-    background: #161616;
+    background: var(--bg-dia-cab);
     padding: 7px 10px 6px;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(0,255,200,0.15);
+    border-bottom: 1px solid var(--cian-dim);
   }
   .dia-fecha {
     font-family: 'Barlow Condensed', sans-serif;
@@ -211,7 +216,7 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 10px;
     font-weight: 600;
-    color: rgba(255,255,255,0.3);
+    color: var(--texto-suave);
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -232,13 +237,13 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
     font-size: 13px;
-    color: var(--amarillo);
+    color: #1A2140;
     padding-top: 1px;
   }
   .partido-hora .am-pm {
     font-size: 9px;
     font-weight: 600;
-    color: rgba(255,255,255,0.35);
+    color: var(--texto-muted);
     display: block;
     margin-top: -2px;
   }
@@ -247,18 +252,18 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 12.5px;
-    color: var(--blanco);
+    color: var(--texto-base);
     line-height: 1.2;
     margin-bottom: 3px;
   }
   .partido-equipos .vs {
     font-weight: 400;
-    color: rgba(255,255,255,0.3);
+    color: var(--texto-muted);
     font-size: 10px;
     margin: 0 2px;
   }
   .partido.destacado .partido-equipos {
-    color: var(--cian);
+    color: #1A2140;
   }
   .partido-canales {
     display: flex;
@@ -267,7 +272,7 @@
   }
   .partido-grupo {
     font-size: 9px;
-    color: rgba(255,255,255,0.3);
+    color: var(--texto-suave);
     font-weight: 500;
     margin-bottom: 2px;
   }
@@ -278,38 +283,31 @@
   }
 
   /* ══════════════════════════════════════════
-     FASE HEADER — banda cian como en PDF
+     FASE HEADER — franja sobria con acento cian
   ══════════════════════════════════════════ */
   .fase-header {
     grid-column: 1 / -1;
-    background: var(--cian);
-    color: var(--negro);
+    background: var(--bg-fase);
+    color: var(--cian);
+    border-left: 4px solid var(--cian);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
     font-style: italic;
-    font-size: 16px;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    padding: 8px 16px;
-    border-radius: 0;
+    padding: 9px 14px;
+    border-radius: 2px;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 6px;
+    margin-top: 8px;
   }
-  .fase-header::before {
-    content: '';
-    display: block;
-    width: 4px;
-    height: 20px;
-    background: var(--negro);
-    border-radius: 0;
-    opacity: 0.25;
-  }
+  .fase-header::before { display: none; } /* quitar barra interna — el borde izq la reemplaza */
   .fase-header .fechas {
-    font-size: 11px;
-    color: rgba(0,0,0,0.55);
-    font-weight: 600;
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
     font-style: normal;
     letter-spacing: 0.3px;
     margin-left: auto;
@@ -321,8 +319,9 @@
   .dia-elim {
     background: var(--bg-elim);
     border: 1px solid var(--bg-dia-borde);
-    border-radius: 0;
+    border-radius: 3px;
     padding: 8px 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   }
   .elim-ronda {
     font-family: 'Barlow Condensed', sans-serif;
@@ -331,9 +330,9 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--cian);
+    color: var(--texto-medio);
     margin-bottom: 5px;
-    border-bottom: 1px solid rgba(0,255,200,0.15);
+    border-bottom: 1px solid var(--linea);
     padding-bottom: 4px;
   }
   .partido-elim {
@@ -346,7 +345,7 @@
   .partido-elim:last-child { margin-bottom: 0; }
   .partido-elim .partido-equipos {
     font-size: 11.5px;
-    color: rgba(255,255,255,0.45);
+    color: var(--texto-suave);
     font-style: italic;
   }
 
@@ -355,13 +354,13 @@
   ══════════════════════════════════════════ */
   .pie {
     grid-column: 1 / -1;
-    background: var(--negro);
+    background: var(--bg-encabezado);
     border: 1px solid var(--linea);
-    color: rgba(255,255,255,0.35);
-    border-radius: 0;
+    border-radius: 2px;
+    color: rgba(255,255,255,0.45);
     padding: 10px 16px;
     font-size: 9.5px;
-    line-height: 1.7;
+    line-height: 1.75;
     margin-top: 4px;
   }
   .pie strong { color: var(--cian); }
@@ -370,7 +369,7 @@
      PRINT — A3 landscape, fuerza colores
   ══════════════════════════════════════════ */
   @media print {
-    body { background: #000; font-size: 10px; }
+    body { background: white; font-size: 10px; }
     .encabezado,
     .leyenda,
     .tag,
@@ -399,22 +398,22 @@
   <div style="display:flex; gap:20px; align-items:center;">
     <div style="text-align:center;">
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;color:var(--cian);letter-spacing:1.5px;text-transform:uppercase;">Sede</div>
-      <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;">EE.UU. · México · Canadá</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.90);margin-top:2px;">EE.UU. · México · Canadá</div>
     </div>
     <div style="text-align:center;">
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;color:var(--cian);letter-spacing:1.5px;text-transform:uppercase;">Equipos</div>
-      <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;">48 selecciones</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.90);margin-top:2px;">48 selecciones</div>
     </div>
     <div style="text-align:center;">
       <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;color:var(--cian);letter-spacing:1.5px;text-transform:uppercase;">Partidos</div>
-      <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;">104 en total</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.90);margin-top:2px;">104 en total</div>
     </div>
   </div>
 
   <div class="encabezado-meta">
     Todos los horarios en <strong>hora colombiana (COT)</strong><br>
     ET − 1h &nbsp;·&nbsp; 11 jun – 19 jul 2026<br>
-    <span style="color:var(--amarillo);font-weight:700;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:0.5px;">🇨🇴 Colombia: Grupo K</span>
+    <span style="color:#FCD116;font-weight:700;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:0.5px;">🇨🇴 Colombia: Grupo K</span>
   </div>
 </div>
 
@@ -706,7 +705,7 @@
         <div class="partido-hora">9:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo K · Estadio Azteca, Ciudad de México</div>
-          <div class="partido-equipos" style="color:var(--amarillo);font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Uzbekistán</div>
+          <div class="partido-equipos" style="color:#C00020;font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Uzbekistán</div>
           <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
         </div>
       </div>
@@ -976,7 +975,7 @@
         <div class="partido-hora">9:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo K · Estadio Akron, Guadalajara</div>
-          <div class="partido-equipos" style="color:var(--amarillo);font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Congo RD</div>
+          <div class="partido-equipos" style="color:#C00020;font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Congo RD</div>
           <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
         </div>
       </div>
@@ -1111,7 +1110,7 @@
         <div class="partido-hora">6:30<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo K — simultáneo · Miami (Colombia) + Atlanta</div>
-          <div class="partido-equipos" style="color:var(--amarillo);font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Portugal · Congo <span class="vs">vs</span> Uzbekistán</div>
+          <div class="partido-equipos" style="color:#C00020;font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Portugal · Congo <span class="vs">vs</span> Uzbekistán</div>
           <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
         </div>
       </div>
@@ -1338,7 +1337,7 @@
 
   <!-- FINAL -->
   <div class="dia col-partido" style="border-left-color:var(--cian); border-left-width:4px;">
-    <div class="dia-cabecera" style="background: linear-gradient(135deg, #000000 0%, #001A12 100%); border-bottom: 2px solid var(--cian);">
+    <div class="dia-cabecera" style="background: linear-gradient(135deg, #0D0F14 0%, #0F1A10 100%); border-bottom: 2px solid var(--cian);">
       <span class="dia-fecha">Dom 19 Jul 🏆</span>
       <span class="dia-dia-semana">Gran Final</span>
     </div>
