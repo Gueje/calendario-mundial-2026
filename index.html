@@ -199,9 +199,11 @@
     background: var(--bg-dia-cab);
     padding: 7px 10px 6px;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid var(--cian-dim);
+    cursor: pointer;
+    user-select: none;
   }
   .dia-fecha {
     font-family: 'Barlow Condensed', sans-serif;
@@ -583,6 +585,34 @@
     }
   }
 
+
+  /* ══════════════════════════════════════════
+     COLAPSO DE DÍAS
+  ══════════════════════════════════════════ */
+  .dia-cabecera .toggle-icon {
+    font-size: 18px;
+    color: rgba(255,255,255,0.55);
+    transition: transform 0.25s ease;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-left: 6px;
+  }
+  .dia-cabecera:hover .toggle-icon {
+    color: rgba(255,255,255,0.90);
+  }
+  .dia-cabecera.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+  }
+  .partidos.collapsible {
+    overflow: hidden;
+    max-height: 2000px;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+  }
+  .partidos.collapsible.collapsed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   @media print {
     body { background: white; font-size: 10px; }
     .encabezado,
@@ -650,17 +680,18 @@
 
   <!-- JUE 11 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Jue 11 Jun</span>
       <span class="dia-dia-semana">Inauguración</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido destacado">
         <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo A · Estadio Azteca, México</div>
           <div class="partido-equipos">México <span class="vs">vs</span> Sudáfrica</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -669,7 +700,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo A · Estadio Akron, Guadalajara</div>
           <div class="partido-equipos">Corea del Sur <span class="vs">vs</span> Rep. Checa</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -677,17 +708,18 @@
 
   <!-- VIE 12 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Vie 12 Jun</span>
       <span class="dia-dia-semana">Viernes</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo B · BMO Field, Toronto</div>
           <div class="partido-equipos">Canadá <span class="vs">vs</span> Bosnia y Herz.</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -696,7 +728,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo D · SoFi Stadium, Los Ángeles</div>
           <div class="partido-equipos">EE.UU. <span class="vs">vs</span> Paraguay</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -704,17 +736,18 @@
 
   <!-- SAB 13 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Sáb 13 Jun</span>
       <span class="dia-dia-semana">Sábado</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo B · Levi's Stadium, San Francisco</div>
           <div class="partido-equipos">Qatar <span class="vs">vs</span> Suiza</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -723,7 +756,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo C · MetLife Stadium, New Jersey</div>
           <div class="partido-equipos">Brasil <span class="vs">vs</span> Marruecos</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -732,7 +765,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo C · Gillette Stadium, Boston</div>
           <div class="partido-equipos">Haití <span class="vs">vs</span> Escocia</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -741,7 +774,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo D · BC Place, Vancouver</div>
           <div class="partido-equipos">Australia <span class="vs">vs</span> Turquía</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -749,17 +782,18 @@
 
   <!-- DOM 14 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Dom 14 Jun</span>
       <span class="dia-dia-semana">Domingo</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">12:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo E · NRG Stadium, Houston</div>
           <div class="partido-equipos">Alemania <span class="vs">vs</span> Curazao</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -768,7 +802,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo F · AT&T Stadium, Dallas</div>
           <div class="partido-equipos">Países Bajos <span class="vs">vs</span> Japón</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -777,7 +811,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo E · Lincoln Financial, Filadelfia</div>
           <div class="partido-equipos">Costa de Marfil <span class="vs">vs</span> Ecuador</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -786,7 +820,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo F · Estadio BBVA, Monterrey</div>
           <div class="partido-equipos">Suecia <span class="vs">vs</span> Túnez</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -794,17 +828,18 @@
 
   <!-- LUN 15 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Lun 15 Jun</span>
       <span class="dia-dia-semana">Lunes</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">11:00<span class="am-pm">a.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo H · Mercedes-Benz, Atlanta</div>
           <div class="partido-equipos">España <span class="vs">vs</span> Cabo Verde</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -813,7 +848,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo G · Lumen Field, Seattle</div>
           <div class="partido-equipos">Bélgica <span class="vs">vs</span> Egipto</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -822,7 +857,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo H · Hard Rock, Miami</div>
           <div class="partido-equipos">Arabia Saudita <span class="vs">vs</span> Uruguay</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -831,7 +866,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo G · SoFi Stadium, Los Ángeles</div>
           <div class="partido-equipos">Irán <span class="vs">vs</span> Nueva Zelanda</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -839,17 +874,18 @@
 
   <!-- MAR 16 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Mar 16 Jun</span>
       <span class="dia-dia-semana">Martes</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo I · MetLife Stadium, New Jersey</div>
           <div class="partido-equipos">Francia <span class="vs">vs</span> Senegal</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -858,7 +894,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo I · Gillette Stadium, Boston</div>
           <div class="partido-equipos">Irak <span class="vs">vs</span> Noruega</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -867,7 +903,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo J · Arrowhead, Kansas City</div>
           <div class="partido-equipos">Argentina <span class="vs">vs</span> Argelia</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -876,7 +912,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo J · Levi's, San Francisco</div>
           <div class="partido-equipos">Austria <span class="vs">vs</span> Jordania</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -884,17 +920,18 @@
 
   <!-- MIE 17 JUN — COLOMBIA -->
   <div class="dia col-partido">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Mié 17 Jun 🇨🇴</span>
       <span class="dia-dia-semana">Colombia debuta</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">12:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo K · NRG Stadium, Houston</div>
           <div class="partido-equipos">Portugal <span class="vs">vs</span> Congo RD</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -903,7 +940,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo L · AT&T Stadium, Dallas</div>
           <div class="partido-equipos">Inglaterra <span class="vs">vs</span> Croacia</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -912,7 +949,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo L · BMO Field, Toronto</div>
           <div class="partido-equipos">Ghana <span class="vs">vs</span> Panamá</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -921,7 +958,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo K · Estadio Azteca, Ciudad de México</div>
           <div class="partido-equipos" style="color:#C00020;font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Uzbekistán</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -929,17 +966,18 @@
 
   <!-- JUE 18 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Jue 18 Jun</span>
       <span class="dia-dia-semana">Jueves</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">11:00<span class="am-pm">a.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo A · Mercedes-Benz, Atlanta</div>
           <div class="partido-equipos">Rep. Checa <span class="vs">vs</span> Sudáfrica</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -948,7 +986,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo B · SoFi Stadium, Los Ángeles</div>
           <div class="partido-equipos">Suiza <span class="vs">vs</span> Bosnia y Herz.</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -957,7 +995,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo B · BC Place, Vancouver</div>
           <div class="partido-equipos">Canadá <span class="vs">vs</span> Qatar</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -966,7 +1004,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo A · Estadio Akron, Guadalajara</div>
           <div class="partido-equipos">México <span class="vs">vs</span> Corea del Sur</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -974,17 +1012,18 @@
 
   <!-- VIE 19 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Vie 19 Jun</span>
       <span class="dia-dia-semana">Viernes</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo D · Lumen Field, Seattle</div>
           <div class="partido-equipos">EE.UU. <span class="vs">vs</span> Australia</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -993,7 +1032,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo C · Gillette Stadium, Boston</div>
           <div class="partido-equipos">Escocia <span class="vs">vs</span> Marruecos</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1002,7 +1041,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo C · Lincoln Financial, Filadelfia</div>
           <div class="partido-equipos">Brasil <span class="vs">vs</span> Haití</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1011,7 +1050,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo D · Levi's, San Francisco</div>
           <div class="partido-equipos">Turquía <span class="vs">vs</span> Paraguay</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1019,17 +1058,18 @@
 
   <!-- SAB 20 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Sáb 20 Jun</span>
       <span class="dia-dia-semana">Sábado</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">12:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo F · NRG Stadium, Houston</div>
           <div class="partido-equipos">Países Bajos <span class="vs">vs</span> Suecia</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1038,7 +1078,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo E · BMO Field, Toronto</div>
           <div class="partido-equipos">Alemania <span class="vs">vs</span> Costa de Marfil</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1047,7 +1087,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo E · Arrowhead, Kansas City</div>
           <div class="partido-equipos">Ecuador <span class="vs">vs</span> Curazao</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1056,7 +1096,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo F · Estadio BBVA, Monterrey</div>
           <div class="partido-equipos">Túnez <span class="vs">vs</span> Japón</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1064,17 +1104,18 @@
 
   <!-- DOM 21 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Dom 21 Jun</span>
       <span class="dia-dia-semana">Domingo</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">11:00<span class="am-pm">a.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo H · Mercedes-Benz, Atlanta</div>
           <div class="partido-equipos">España <span class="vs">vs</span> Arabia Saudita</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1083,7 +1124,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo G · SoFi Stadium, Los Ángeles</div>
           <div class="partido-equipos">Bélgica <span class="vs">vs</span> Irán</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1092,7 +1133,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo H · Hard Rock, Miami</div>
           <div class="partido-equipos">Uruguay <span class="vs">vs</span> Cabo Verde</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1101,7 +1142,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo G · BC Place, Vancouver</div>
           <div class="partido-equipos">Nueva Zelanda <span class="vs">vs</span> Egipto</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1109,17 +1150,18 @@
 
   <!-- LUN 22 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Lun 22 Jun</span>
       <span class="dia-dia-semana">Lunes</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">12:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo J · AT&T Stadium, Dallas</div>
           <div class="partido-equipos">Argentina <span class="vs">vs</span> Austria</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1128,7 +1170,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo I · Lincoln Financial, Filadelfia</div>
           <div class="partido-equipos">Francia <span class="vs">vs</span> Irak</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1137,7 +1179,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo I · MetLife Stadium, New Jersey</div>
           <div class="partido-equipos">Noruega <span class="vs">vs</span> Senegal</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1146,7 +1188,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo J · Levi's, San Francisco</div>
           <div class="partido-equipos">Jordania <span class="vs">vs</span> Argelia</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1154,17 +1196,18 @@
 
   <!-- MAR 23 JUN — COLOMBIA -->
   <div class="dia col-partido">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Mar 23 Jun 🇨🇴</span>
       <span class="dia-dia-semana">Colombia fecha 2</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">12:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo K · NRG Stadium, Houston</div>
           <div class="partido-equipos">Portugal <span class="vs">vs</span> Uzbekistán</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1173,7 +1216,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo L · Gillette Stadium, Boston</div>
           <div class="partido-equipos">Inglaterra <span class="vs">vs</span> Ghana</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1182,7 +1225,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo L · BMO Field, Toronto</div>
           <div class="partido-equipos">Panamá <span class="vs">vs</span> Croacia</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1191,7 +1234,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo K · Estadio Akron, Guadalajara</div>
           <div class="partido-equipos" style="color:#C00020;font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Congo RD</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1199,17 +1242,18 @@
 
   <!-- MIE 24 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Mié 24 Jun</span>
       <span class="dia-dia-semana">Cierre Grupos A, B, C</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo B — simultáneo · Vancouver + Seattle</div>
           <div class="partido-equipos">Suiza <span class="vs">vs</span> Canadá · Bosnia <span class="vs">vs</span> Qatar</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1218,7 +1262,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo C — simultáneo · Miami + Atlanta</div>
           <div class="partido-equipos">Escocia <span class="vs">vs</span> Brasil · Marruecos <span class="vs">vs</span> Haití</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1227,7 +1271,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo A — simultáneo · Azteca + Monterrey</div>
           <div class="partido-equipos">Rep. Checa <span class="vs">vs</span> México · Sudáfrica <span class="vs">vs</span> Corea</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1235,17 +1279,18 @@
 
   <!-- JUE 25 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Jue 25 Jun</span>
       <span class="dia-dia-semana">Cierre Grupos D, E, F</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">3:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo E — simultáneo · NJ + Filadelfia</div>
           <div class="partido-equipos">Ecuador <span class="vs">vs</span> Alemania · Curazao <span class="vs">vs</span> Costa Marfil</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1254,7 +1299,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo F — simultáneo · Dallas + Kansas City</div>
           <div class="partido-equipos">Japón <span class="vs">vs</span> Suecia · Túnez <span class="vs">vs</span> Países Bajos</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1263,7 +1308,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo D — simultáneo · Los Ángeles + S.F.</div>
           <div class="partido-equipos">Turquía <span class="vs">vs</span> EE.UU. · Paraguay <span class="vs">vs</span> Australia</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1271,17 +1316,18 @@
 
   <!-- VIE 26 JUN -->
   <div class="dia">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Vie 26 Jun</span>
       <span class="dia-dia-semana">Cierre Grupos G, H, I</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo I — simultáneo · Boston + Toronto</div>
           <div class="partido-equipos">Noruega <span class="vs">vs</span> Francia · Senegal <span class="vs">vs</span> Irak</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1290,7 +1336,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo H — simultáneo · Guadalajara + Houston</div>
           <div class="partido-equipos">Uruguay <span class="vs">vs</span> España · Cabo Verde <span class="vs">vs</span> Arabia S.</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1299,7 +1345,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo G — simultáneo · Vancouver + Seattle</div>
           <div class="partido-equipos">Nueva Zelanda <span class="vs">vs</span> Bélgica · Egipto <span class="vs">vs</span> Irán</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1307,17 +1353,18 @@
 
   <!-- SAB 27 JUN — COLOMBIA -->
   <div class="dia col-partido">
-    <div class="dia-cabecera">
+    <div class="dia-cabecera" role="button" tabindex="0">
       <span class="dia-fecha">Sáb 27 Jun 🇨🇴</span>
       <span class="dia-dia-semana">Colombia fecha 3 · Cierre J, K, L</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora">4:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
           <div class="partido-grupo">Grupo L — simultáneo · New Jersey + Filadelfia</div>
           <div class="partido-equipos">Panamá <span class="vs">vs</span> Inglaterra · Croacia <span class="vs">vs</span> Ghana</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1326,7 +1373,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo K — simultáneo · Miami (Colombia) + Atlanta</div>
           <div class="partido-equipos" style="color:#C00020;font-size:14px;font-weight:800;">🇨🇴 Colombia <span class="vs">vs</span> Portugal · Congo <span class="vs">vs</span> Uzbekistán</div>
-          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag caracol">Caracol</span><span class="tag rcn">RCN</span><span class="tag dsports">DSports</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
       <hr class="separador-dia">
@@ -1335,7 +1382,7 @@
         <div class="partido-info">
           <div class="partido-grupo">Grupo J — simultáneo · Dallas + Kansas City</div>
           <div class="partido-equipos">Jordania <span class="vs">vs</span> Argentina · Argelia <span class="vs">vs</span> Austria</div>
-          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span></div>
+          <div class="partido-canales"><span class="tag dsports">DSports</span><span class="tag win">Win</span><span class="tag disney">Disney+</span><span class="tag paramount">Paramount+</span></div>
         </div>
       </div>
     </div>
@@ -1555,8 +1602,9 @@
     <div class="dia-cabecera" style="background: linear-gradient(135deg, #0D0F14 0%, #0F1A10 100%); border-bottom: 2px solid var(--cian);">
       <span class="dia-fecha">Dom 19 Jul 🏆</span>
       <span class="dia-dia-semana">Gran Final</span>
+          <span class="toggle-icon">▾</span>
     </div>
-    <div class="partidos">
+    <div class="partidos collapsible">
       <div class="partido">
         <div class="partido-hora" style="font-size:16px; color:var(--cian);">2:00<span class="am-pm">p.m.</span></div>
         <div class="partido-info">
@@ -1575,5 +1623,24 @@
 
 </div><!-- fin .contenido -->
 
+
+<script>
+(function () {
+  document.querySelectorAll('.dia-cabecera').forEach(function (cab) {
+    cab.addEventListener('click', function () {
+      var partidos = cab.nextElementSibling;
+      if (!partidos || !partidos.classList.contains('collapsible')) return;
+      cab.classList.toggle('collapsed');
+      partidos.classList.toggle('collapsed');
+    });
+    cab.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        cab.click();
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
