@@ -1635,13 +1635,38 @@
 
 <script>
 (function () {
+  var PREFIX = 'mw26_dia_';
+
+  function getKey(cab) {
+    var fecha = cab.querySelector('.dia-fecha');
+    return PREFIX + (fecha ? fecha.textContent.trim().replace(/\s+/g, '_') : Math.random());
+  }
+
+  function applyState(cab, partidos, collapsed) {
+    if (collapsed) {
+      cab.classList.add('collapsed');
+      partidos.classList.add('collapsed');
+    } else {
+      cab.classList.remove('collapsed');
+      partidos.classList.remove('collapsed');
+    }
+  }
+
   document.querySelectorAll('.dia-cabecera').forEach(function (cab) {
+    var partidos = cab.nextElementSibling;
+    if (!partidos || !partidos.classList.contains('collapsible')) return;
+
+    // Restaurar estado guardado al cargar
+    var key = getKey(cab);
+    var saved = localStorage.getItem(key);
+    if (saved === 'collapsed') applyState(cab, partidos, true);
+
     cab.addEventListener('click', function () {
-      var partidos = cab.nextElementSibling;
-      if (!partidos || !partidos.classList.contains('collapsible')) return;
-      cab.classList.toggle('collapsed');
-      partidos.classList.toggle('collapsed');
+      var isCollapsed = cab.classList.contains('collapsed');
+      applyState(cab, partidos, !isCollapsed);
+      localStorage.setItem(key, !isCollapsed ? 'collapsed' : 'open');
     });
+
     cab.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
