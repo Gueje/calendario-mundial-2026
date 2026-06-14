@@ -126,8 +126,8 @@ def main():
     data = fetch_matches()
     results = build_results(data)
 
-    # Guardar en resultados.json en la raiz del repo
-output_path = "resultados.json"
+    # Guardar en resultados.json en la raiz del repo (directorio de trabajo del Action)
+    output_path = "resultados.json"
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump({
