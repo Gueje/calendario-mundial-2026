@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T15:38:55.281691+00:00",
+  "updated": "2026-06-14T16:04:13.703801+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -11,12 +11,12 @@
       "home_goals": 2,
       "away_goals": 1
     },
-    "Canadá vs Bosnia-Herzegovina": {
+    "Canadá vs Bosnia y Herz.": {
       "status": "FINISHED",
       "home_goals": 1,
       "away_goals": 1
     },
-    "United States vs Paraguay": {
+    "EE.UU. vs Paraguay": {
       "status": "FINISHED",
       "home_goals": 4,
       "away_goals": 1
@@ -61,7 +61,7 @@
       "home_goals": null,
       "away_goals": null
     },
-    "España vs Cape Verde Islands": {
+    "España vs Cabo Verde": {
       "status": "TIMED",
       "home_goals": null,
       "away_goals": null
@@ -116,7 +116,7 @@
       "home_goals": null,
       "away_goals": null
     },
-    "Uzbekistán vs Colombia": {
+    "Colombia vs Uzbekistán": {
       "status": "TIMED",
       "home_goals": null,
       "away_goals": null
@@ -126,7 +126,7 @@
       "home_goals": null,
       "away_goals": null
     },
-    "Suiza vs Bosnia-Herzegovina": {
+    "Suiza vs Bosnia y Herz.": {
       "status": "TIMED",
       "home_goals": null,
       "away_goals": null
@@ -141,7 +141,7 @@
       "home_goals": null,
       "away_goals": null
     },
-    "United States vs Australia": {
+    "EE.UU. vs Australia": {
       "status": "TIMED",
       "home_goals": null,
       "away_goals": null
@@ -191,7 +191,7 @@
       "home_goals": null,
       "away_goals": null
     },
-    "Uruguay vs Cape Verde Islands": {
+    "Uruguay vs Cabo Verde": {
       "status": "TIMED",
       "home_goals": null,
       "away_goals": null
@@ -246,7 +246,7 @@
       "home_goals": null,
       "away_goals": null
     },
-    "Bosnia-Herzegovina vs Qatar": {
+    "Bosnia y Herz. vs Qatar": {
       "status": "TIMED",
       "home_goals": null,
       "away_goals": null
@@ -291,7 +291,7 @@
       "home_goals": null,
       "away_goals": null
     },
-    "Turquía vs United States": {
+    "Turquía vs EE.UU.": {
       "status": "TIMED",
       "home_goals": null,
       "away_goals": null
@@ -316,7 +316,7 @@
       "home_goals": null,
       "away_goals": null
     },
-    "Cape Verde Islands vs Arabia Saudita": {
+    "Cabo Verde vs Arabia Saudita": {
       "status": "TIMED",
       "home_goals": null,
       "away_goals": null
