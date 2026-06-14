@@ -127,8 +127,7 @@ def main():
     results = build_results(data)
 
     # Guardar en resultados.json en la raiz del repo
-    output_path = os.path.join(os.path.dirname(__file__), "..", "resultados.json")
-    output_path = os.path.normpath(output_path)
+output_path = "resultados.json"
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump({
