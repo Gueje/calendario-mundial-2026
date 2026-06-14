@@ -606,16 +606,7 @@
     color: #39FF14;
     border: 1px solid rgba(57,255,20,0.35);
   }
-  .marcador.en-vivo {
-    background: rgba(255,45,0,0.20);
-    color: #FF4D1A;
-    border: 1px solid rgba(255,45,0,0.45);
-    animation: parpadeo 1.4s ease-in-out infinite;
-  }
-  @keyframes parpadeo {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.45; }
-  }
+
 
   @media print {
     body { background: white; font-size: 10px; }
@@ -1733,9 +1724,6 @@
         if (status === 'FINISHED' && hg !== null && ag !== null) {
           el.textContent = hg + ' - ' + ag;
           el.classList.add('finalizado');
-        } else if (status === 'IN_PLAY' || status === 'PAUSED') {
-          el.textContent = (hg !== null ? hg : '?') + ' - ' + (ag !== null ? ag : '?');
-          el.classList.add('en-vivo');
         }
         // SCHEDULED: no mostrar nada
       });
