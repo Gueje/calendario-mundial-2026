@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T19:26:51.490887+00:00",
+  "updated": "2026-06-14T21:13:21.713267+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -47,9 +47,9 @@
       "away_goals": 1
     },
     "Países Bajos vs Japón": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "IN_PLAY",
+      "home_goals": 0,
+      "away_goals": 0
     },
     "Costa de Marfil vs Ecuador": {
       "status": "TIMED",
