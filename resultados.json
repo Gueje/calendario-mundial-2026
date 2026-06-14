@@ -1,0 +1,370 @@
+{
+  "updated": "2026-06-14T15:27:33.027827+00:00",
+  "matches": {
+    "México vs Sudáfrica": {
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    "South Korea vs Czechia": {
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    "Canadá vs Bosnia-Herzegovina": {
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    "United States vs Paraguay": {
+      "status": "FINISHED",
+      "home_goals": 4,
+      "away_goals": 1
+    },
+    "Qatar vs Suiza": {
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    "Brasil vs Marruecos": {
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    "Haití vs Escocia": {
+      "status": "FINISHED",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    "Australia vs Turquía": {
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    "Alemania vs Curazao": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Países Bajos vs Japón": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Costa de Marfil vs Ecuador": {
+      "status": "SCHEDULED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Suecia vs Túnez": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "España vs Cape Verde Islands": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Bélgica vs Egipto": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Arabia Saudita vs Uruguay": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Irán vs Nueva Zelanda": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Francia vs Senegal": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Irak vs Noruega": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Argentina vs Argelia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Austria vs Jordania": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Portugal vs Congo DR": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Inglaterra vs Croacia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Ghana vs Panamá": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Uzbekistán vs Colombia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Czechia vs Sudáfrica": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Suiza vs Bosnia-Herzegovina": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Canadá vs Qatar": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "México vs South Korea": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "United States vs Australia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Escocia vs Marruecos": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Brasil vs Haití": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Turquía vs Paraguay": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Países Bajos vs Suecia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Alemania vs Costa de Marfil": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Ecuador vs Curazao": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Túnez vs Japón": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "España vs Arabia Saudita": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Bélgica vs Irán": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Uruguay vs Cape Verde Islands": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Nueva Zelanda vs Egipto": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Argentina vs Austria": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Francia vs Irak": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Noruega vs Senegal": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Jordania vs Argelia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Portugal vs Uzbekistán": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Inglaterra vs Ghana": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Panamá vs Croacia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Colombia vs Congo DR": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Suiza vs Canadá": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Bosnia-Herzegovina vs Qatar": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Marruecos vs Haití": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Escocia vs Brasil": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Czechia vs México": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Sudáfrica vs South Korea": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Ecuador vs Alemania": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Curazao vs Costa de Marfil": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Túnez vs Países Bajos": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Japón vs Suecia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Turquía vs United States": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Paraguay vs Australia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Noruega vs Francia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Senegal vs Irak": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Uruguay vs España": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Cape Verde Islands vs Arabia Saudita": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Nueva Zelanda vs Bélgica": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Egipto vs Irán": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Panamá vs Inglaterra": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Croacia vs Ghana": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Colombia vs Portugal": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Congo DR vs Uzbekistán": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Jordania vs Argentina": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "Argelia vs Austria": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    },
+    "None vs None": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null
+    }
+  }
+}
