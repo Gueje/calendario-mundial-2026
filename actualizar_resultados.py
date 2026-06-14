@@ -22,55 +22,58 @@ COMPETITION_URL = "https://api.football-data.org/v4/competitions/WC/matches"
 
 # Mapa de nombres de equipos: como los devuelve la API -> como aparecen en el HTML
 # Se usa el atributo data-home / data-away para el cruce
+# Mapa construido desde los nombres reales que devuelve la API
 TEAM_MAP = {
-    "Mexico":              "México",
-    "South Africa":        "Sudáfrica",
-    "Korea Republic":      "Corea del Sur",
-    "Czech Republic":      "Rep. Checa",
-    "Canada":              "Canadá",
-    "Bosnia and Herzegovina": "Bosnia y Herz.",
-    "USA":                 "EE.UU.",
-    "Paraguay":            "Paraguay",
+    # Ya en español correcto (la API los devuelve así)
+    "México":              "México",
+    "Sudáfrica":           "Sudáfrica",
+    "Canadá":              "Canadá",
     "Qatar":               "Qatar",
-    "Switzerland":         "Suiza",
-    "Brazil":              "Brasil",
-    "Morocco":             "Marruecos",
-    "Haiti":               "Haití",
-    "Scotland":            "Escocia",
+    "Brasil":              "Brasil",
+    "Marruecos":           "Marruecos",
+    "Haití":               "Haití",
+    "Escocia":             "Escocia",
     "Australia":           "Australia",
-    "Turkey":              "Turquía",
-    "Germany":             "Alemania",
-    "Curaçao":             "Curazao",
-    "Netherlands":         "Países Bajos",
-    "Japan":               "Japón",
-    "Ivory Coast":         "Costa de Marfil",
-    "Ecuador":             "Ecuador",
-    "Sweden":              "Suecia",
-    "Tunisia":             "Túnez",
-    "Spain":               "España",
-    "Cape Verde":          "Cabo Verde",
-    "Belgium":             "Bélgica",
-    "Egypt":               "Egipto",
-    "Saudi Arabia":        "Arabia Saudita",
-    "Uruguay":             "Uruguay",
-    "Iran":                "Irán",
-    "New Zealand":         "Nueva Zelanda",
-    "France":              "Francia",
-    "Senegal":             "Senegal",
-    "Iraq":                "Irak",
-    "Norway":              "Noruega",
+    "Alemania":            "Alemania",
+    "Suecia":              "Suecia",
+    "Bélgica":             "Bélgica",
+    "Francia":             "Francia",
     "Argentina":           "Argentina",
-    "Algeria":             "Argelia",
-    "Austria":             "Austria",
-    "Jordan":              "Jordania",
     "Portugal":            "Portugal",
-    "DR Congo":            "Congo RD",
-    "England":             "Inglaterra",
-    "Croatia":             "Croacia",
-    "Ghana":               "Ghana",
-    "Panama":              "Panamá",
+    "Inglaterra":          "Inglaterra",
+    "Panamá":              "Panamá",
     "Colombia":            "Colombia",
-    "Uzbekistan":          "Uzbekistán",
+    "Suiza":               "Suiza",
+    "Ecuador":             "Ecuador",
+    "España":              "España",
+    "Uruguay":             "Uruguay",
+    "Noruega":             "Noruega",
+    "Jordania":            "Jordania",
+    "Croacia":             "Croacia",
+    "Ghana":               "Ghana",
+    "Paraguay":            "Paraguay",
+    "Turquía":             "Turquía",
+    "Egipto":              "Egipto",
+    "Senegal":             "Senegal",
+    "Irak":                "Irak",
+    "Argelia":             "Argelia",
+    "Austria":             "Austria",
+    "Irán":                "Irán",
+    "Japón":               "Japón",
+    "Túnez":               "Túnez",
+    "Curazao":             "Curazao",
+    "Uzbekistán":          "Uzbekistán",
+    # En inglés (la API los devuelve así, hay que traducir)
+    "South Korea":         "Corea del Sur",
+    "Czechia":             "Rep. Checa",
+    "Bosnia-Herzegovina":  "Bosnia y Herz.",
+    "United States":       "EE.UU.",
+    "Cape Verde Islands":  "Cabo Verde",
+    "Congo DR":            "Congo RD",
+    "Costa de Marfil":     "Costa de Marfil",
+    "Nueva Zelanda":       "Nueva Zelanda",
+    "Arabia Saudita":      "Arabia Saudita",
+    "Países Bajos":        "Países Bajos",
 }
 
 
@@ -104,8 +107,13 @@ def build_results(data):
     for match in data.get("matches", []):
         status = match.get("status")          # SCHEDULED, IN_PLAY, PAUSED, FINISHED, etc.
         score  = match.get("score", {})
-        home   = normalize(match["homeTeam"]["name"])
-        away   = normalize(match["awayTeam"]["name"])
+        home_raw = match["homeTeam"]["name"]
+        away_raw = match["awayTeam"]["name"]
+        # Ignorar entradas basura de la API
+        if not home_raw or not away_raw or home_raw == "None" or away_raw == "None":
+            continue
+        home   = normalize(home_raw)
+        away   = normalize(away_raw)
         key    = f"{home} vs {away}"
 
         full   = score.get("fullTime", {})
