@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T22:19:47.392455+00:00",
+  "updated": "2026-06-16T01:41:27.365923+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -72,14 +72,14 @@
       "away_goals": 1
     },
     "Arabia Saudita vs Uruguay": {
-      "status": "IN_PLAY",
-      "home_goals": 0,
-      "away_goals": 0
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 1
     },
     "Irán vs Nueva Zelanda": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "IN_PLAY",
+      "home_goals": 0,
+      "away_goals": 1
     },
     "Francia vs Senegal": {
       "status": "TIMED",
