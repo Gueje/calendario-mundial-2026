@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T22:45:17.769359+00:00",
+  "updated": "2026-06-18T00:16:18.734916+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -112,9 +112,9 @@
       "away_goals": 2
     },
     "Ghana vs Panamá": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "IN_PLAY",
+      "home_goals": 0,
+      "away_goals": 0
     },
     "Colombia vs Uzbekistán": {
       "status": "TIMED",
