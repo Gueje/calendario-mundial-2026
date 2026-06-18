@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T00:16:18.734916+00:00",
+  "updated": "2026-06-18T05:55:34.203189+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -113,13 +113,13 @@
     },
     "Ghana vs Panamá": {
       "status": "IN_PLAY",
-      "home_goals": 0,
+      "home_goals": 1,
       "away_goals": 0
     },
     "Colombia vs Uzbekistán": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 3
     },
     "Rep. Checa vs Sudáfrica": {
       "status": "TIMED",
