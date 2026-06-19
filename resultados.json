@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T21:11:13.059806+00:00",
+  "updated": "2026-06-19T22:58:13.722555+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -13,8 +13,8 @@
     },
     "Canadá vs Bosnia y Herz.": {
       "status": "FINISHED",
-      "home_goals": 1,
-      "away_goals": 1
+      "home_goals": null,
+      "away_goals": null
     },
     "EE.UU. vs Paraguay": {
       "status": "FINISHED",
@@ -147,9 +147,9 @@
       "away_goals": 0
     },
     "Escocia vs Marruecos": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "PAUSED",
+      "home_goals": 0,
+      "away_goals": 1
     },
     "Brasil vs Haití": {
       "status": "TIMED",
