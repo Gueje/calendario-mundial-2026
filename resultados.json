@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T17:19:47.172325+00:00",
+  "updated": "2026-06-19T19:50:02.570367+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -142,9 +142,9 @@
       "away_goals": 0
     },
     "EE.UU. vs Australia": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "IN_PLAY",
+      "home_goals": 1,
+      "away_goals": 0
     },
     "Escocia vs Marruecos": {
       "status": "TIMED",
