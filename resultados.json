@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T01:44:46.837088+00:00",
+  "updated": "2026-06-19T07:07:17.226028+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -137,8 +137,8 @@
       "away_goals": 0
     },
     "México vs Corea del Sur": {
-      "status": "IN_PLAY",
-      "home_goals": 0,
+      "status": "FINISHED",
+      "home_goals": 1,
       "away_goals": 0
     },
     "EE.UU. vs Australia": {
