@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T05:14:36.013751+00:00",
+  "updated": "2026-06-20T16:18:18.065799+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -13,8 +13,8 @@
     },
     "Canadá vs Bosnia y Herz.": {
       "status": "FINISHED",
-      "home_goals": null,
-      "away_goals": null
+      "home_goals": 1,
+      "away_goals": 1
     },
     "EE.UU. vs Paraguay": {
       "status": "FINISHED",
