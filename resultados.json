@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20T20:14:55.784450+00:00",
+  "updated": "2026-06-20T22:07:22.370647+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -167,9 +167,9 @@
       "away_goals": 1
     },
     "Alemania vs Costa de Marfil": {
-      "status": "IN_PLAY",
-      "home_goals": 0,
-      "away_goals": 0
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 1
     },
     "Ecuador vs Curazao": {
       "status": "TIMED",
