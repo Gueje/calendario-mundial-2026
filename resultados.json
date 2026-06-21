@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T18:19:51.467850+00:00",
+  "updated": "2026-06-21T20:25:21.253413+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -187,9 +187,9 @@
       "away_goals": 0
     },
     "Bélgica vs Irán": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "IN_PLAY",
+      "home_goals": 0,
+      "away_goals": 0
     },
     "Uruguay vs Cabo Verde": {
       "status": "TIMED",
