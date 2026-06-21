@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T16:45:27.432654+00:00",
+  "updated": "2026-06-21T18:19:51.467850+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -182,8 +182,8 @@
       "away_goals": 4
     },
     "España vs Arabia Saudita": {
-      "status": "IN_PLAY",
-      "home_goals": 3,
+      "status": "FINISHED",
+      "home_goals": 5,
       "away_goals": 0
     },
     "Bélgica vs Irán": {
