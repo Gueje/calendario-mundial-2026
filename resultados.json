@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T06:01:57.055586+00:00",
+  "updated": "2026-06-21T16:45:27.432654+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -177,14 +177,14 @@
       "away_goals": 0
     },
     "Túnez vs Japón": {
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "home_goals": 0,
       "away_goals": 4
     },
     "España vs Arabia Saudita": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "IN_PLAY",
+      "home_goals": 3,
+      "away_goals": 0
     },
     "Bélgica vs Irán": {
       "status": "TIMED",
