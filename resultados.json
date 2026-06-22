@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T22:15:09.880956+00:00",
+  "updated": "2026-06-22T00:12:01.511721+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -192,9 +192,9 @@
       "away_goals": 0
     },
     "Uruguay vs Cabo Verde": {
-      "status": "IN_PLAY",
-      "home_goals": 0,
-      "away_goals": 0
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 2
     },
     "Nueva Zelanda vs Egipto": {
       "status": "TIMED",
