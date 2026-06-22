@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T21:31:41.814028+00:00",
+  "updated": "2026-06-22T23:19:53.779585+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -207,7 +207,7 @@
       "away_goals": 0
     },
     "Francia vs Irak": {
-      "status": "IN_PLAY",
+      "status": "PAUSED",
       "home_goals": 1,
       "away_goals": 0
     },
