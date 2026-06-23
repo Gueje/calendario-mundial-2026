@@ -42,7 +42,7 @@ ID_TO_KEY = {
     537403: "Portugal vs Congo RD",
     537409: "Inglaterra vs Croacia",
     537410: "Ghana vs Panamá",
-    537404: "Colombia vs Uzbekistán",
+    537404: "Uzbekistán vs Colombia",
     537329: "Rep. Checa vs Sudáfrica",
     537335: "Suiza vs Bosnia y Herz.",
     537336: "Canadá vs Qatar",
@@ -95,6 +95,15 @@ ID_TO_KEY = {
     # Por ahora se omiten; se actualizaran en una segunda iteracion
 }
 
+# IDs donde el orden local/visitante de la API es el INVERSO del orden
+# usado en la clave del HTML (ej: API pone Uzbekistan de local, pero el
+# HTML dice "Colombia vs Uzbekistán"). Para estos casos hay que voltear
+# home_goals y away_goals al guardar el resultado.
+IDS_INVERTIDOS = {
+    # (vacio por ahora) - 537404 ya no necesita inversion: la clave del HTML
+    # se corrigio a "Uzbekistán vs Colombia", que coincide con el orden de la API.
+}
+
 def fetch_matches():
     url = "https://api.football-data.org/v4/competitions/WC/matches"
     req = urllib.request.Request(url, headers={"X-Auth-Token": API_TOKEN})
@@ -107,6 +116,75 @@ def fetch_matches():
     except Exception as e:
         print(f"Error de red: {e}")
         sys.exit(1)
+
+def fetch_standings():
+    """Consulta la tabla de posiciones de los 12 grupos. Si falla, no afecta resultados.json."""
+    url = "https://api.football-data.org/v4/competitions/WC/standings"
+    req = urllib.request.Request(url, headers={"X-Auth-Token": API_TOKEN})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        print(f"AVISO: no se pudo obtener standings ({e}). Se omite grupos.json esta corrida.")
+        return None
+
+
+# Mapa de nombres de equipo (API -> espanol del HTML), reutilizado para grupos
+EQUIPO_ES = {v: v for v in []}  # se completa abajo dinamicamente desde ID_TO_KEY
+for _key in ID_TO_KEY.values():
+    for _team in _key.split(" vs "):
+        EQUIPO_ES[_team] = _team
+# Variantes en ingles que la API usa en standings (mismas que en partidos)
+EQUIPO_ES.update({
+    "Mexico": "México", "South Africa": "Sudáfrica", "Canada": "Canadá",
+    "Switzerland": "Suiza", "Brazil": "Brasil", "Morocco": "Marruecos",
+    "Haiti": "Haití", "Scotland": "Escocia", "Germany": "Alemania",
+    "Netherlands": "Países Bajos", "Ivory Coast": "Costa de Marfil",
+    "Sweden": "Suecia", "Belgium": "Bélgica", "Egypt": "Egipto",
+    "Saudi Arabia": "Arabia Saudita", "Iran": "Irán", "France": "Francia",
+    "Iraq": "Irak", "Algeria": "Argelia", "Jordan": "Jordania",
+    "England": "Inglaterra", "Croatia": "Croacia", "Panama": "Panamá",
+    "Spain": "España", "Norway": "Noruega", "Tunisia": "Túnez",
+    "Japan": "Japón", "Turkey": "Turquía", "New Zealand": "Nueva Zelanda",
+    "Uzbekistan": "Uzbekistán", "South Korea": "Corea del Sur",
+    "Czechia": "Rep. Checa", "Congo DR": "Congo RD", "Curaçao": "Curazao",
+    "Cape Verde Islands": "Cabo Verde", "Bosnia-Herzegovina": "Bosnia y Herz.",
+    "United States": "EE.UU.",
+})
+
+
+def build_groups(data):
+    """Convierte la respuesta de standings en un dict simple: {grupo: [equipos ordenados]}."""
+    grupos = {}
+    if not data:
+        return grupos
+
+    for standing in data.get("standings", []):
+        group_name = standing.get("group")  # ej: "GROUP_A"
+        if not group_name:
+            continue
+        letra = group_name.replace("GROUP_", "")
+        tabla = standing.get("table", [])
+
+        filas = []
+        for row in tabla:
+            nombre_api = row.get("team", {}).get("name", "")
+            nombre_es  = EQUIPO_ES.get(nombre_api, nombre_api)
+            filas.append({
+                "equipo":   nombre_es,
+                "pj":       row.get("playedGames"),
+                "g":        row.get("won"),
+                "e":        row.get("draw"),
+                "p":        row.get("lost"),
+                "gf":       row.get("goalsFor"),
+                "gc":       row.get("goalsAgainst"),
+                "dg":       row.get("goalDifference"),
+                "pts":      row.get("points"),
+            })
+        grupos[letra] = filas
+
+    return grupos
+
 
 def main():
     print(f"[{datetime.now(timezone.utc).isoformat()}] Consultando API...")
@@ -125,6 +203,10 @@ def main():
         hg     = full.get("home")
         ag     = full.get("away")
 
+        # Si el orden de la API es inverso al del HTML, voltear los goles
+        if mid in IDS_INVERTIDOS:
+            hg, ag = ag, hg
+
         results[key] = {
             "status":     status,
             "home_goals": hg,
@@ -141,6 +223,23 @@ def main():
 
     terminados = sum(1 for v in results.values() if v["status"] == "FINISHED")
     print(f"Guardado resultados.json: {len(results)} partidos, {terminados} finalizados.")
+
+    # --- Grupos: independiente de resultados.json. Si falla, no interrumpe nada arriba. ---
+    try:
+        standings_data = fetch_standings()
+        grupos = build_groups(standings_data)
+        if grupos:
+            grupos_output = {
+                "updated": datetime.now(timezone.utc).isoformat(),
+                "groups": grupos,
+            }
+            with open("grupos.json", "w", encoding="utf-8") as f:
+                json.dump(grupos_output, f, ensure_ascii=False, indent=2)
+            print(f"Guardado grupos.json: {len(grupos)} grupos.")
+        else:
+            print("AVISO: grupos.json no actualizado (sin datos de standings).")
+    except Exception as e:
+        print(f"AVISO: error generando grupos.json ({e}). No afecta resultados.json.")
 
 if __name__ == "__main__":
     main()
