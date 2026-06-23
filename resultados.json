@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T03:35:48.946968+00:00",
+  "updated": "2026-06-23T14:22:27.127577+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -217,9 +217,9 @@
       "away_goals": 2
     },
     "Jordania vs Argelia": {
-      "status": "IN_PLAY",
-      "home_goals": 0,
-      "away_goals": 0
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 2
     },
     "Portugal vs Uzbekistán": {
       "status": "TIMED",
