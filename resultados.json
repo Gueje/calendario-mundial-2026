@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T17:17:37.197055+00:00",
+  "updated": "2026-06-23T19:51:07.930224+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -116,7 +116,7 @@
       "home_goals": 1,
       "away_goals": 0
     },
-    "Colombia vs Uzbekistán": {
+    "Uzbekistán vs Colombia": {
       "status": "FINISHED",
       "home_goals": 1,
       "away_goals": 3
@@ -222,8 +222,8 @@
       "away_goals": 2
     },
     "Portugal vs Uzbekistán": {
-      "status": "IN_PLAY",
-      "home_goals": 1,
+      "status": "FINISHED",
+      "home_goals": 5,
       "away_goals": 0
     },
     "Inglaterra vs Ghana": {
