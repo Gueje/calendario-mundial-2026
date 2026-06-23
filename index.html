@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mundial 2026 – Calendario Colombia</title>
+<title>Mundial 2026 — Calendario Colombia</title>
 <link rel="icon" type="image/png" href="Favicon.png">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,800&family=Barlow:wght@400;500;600&display=swap');
@@ -573,6 +573,7 @@
   .dia-cabecera:hover .toggle-icon {
     color: #FFFFFF;
   }
+  .panel-grupos-cabecera.collapsed .toggle-icon,
   .dia-cabecera.collapsed .toggle-icon {
     transform: rotate(-90deg);
   }
@@ -608,6 +609,126 @@
     border: 1px solid rgba(57,255,20,0.35);
   }
 
+
+
+  /* ══════════════════════════════════════════
+     PANEL DE GRUPOS
+  ══════════════════════════════════════════ */
+  .panel-grupos-wrap {
+    margin: 0 20px 14px;
+    border: 1px solid #222222;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #111111;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
+  .panel-grupos-cabecera {
+    background: #6B21E8;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .panel-grupos-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .panel-grupos-sub {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.55);
+    margin-left: auto;
+  }
+  .panel-grupos-cuerpo {
+    padding: 14px;
+  }
+  .panel-grupos-cuerpo.collapsed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .grupos-cargando {
+    color: #888888;
+    font-size: 11px;
+    text-align: center;
+    padding: 20px;
+  }
+  .grupos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .grupo-card {
+    background: #0A0A0A;
+    border: 1px solid #2A2A2A;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .grupo-card-titulo {
+    background: rgba(255,255,255,0.06);
+    color: #39FF14;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 10px;
+    border-bottom: 1px solid #2A2A2A;
+  }
+  .grupo-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5px;
+  }
+  .grupo-tabla th {
+    color: #888888;
+    font-weight: 600;
+    text-align: center;
+    padding: 4px 3px;
+    border-bottom: 1px solid #2A2A2A;
+  }
+  .grupo-tabla th:first-child {
+    text-align: left;
+    padding-left: 8px;
+  }
+  .grupo-tabla td {
+    color: #E0E0E0;
+    text-align: center;
+    padding: 4px 3px;
+  }
+  .grupo-tabla td:first-child {
+    text-align: left;
+    padding-left: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .grupo-tabla td.pts {
+    color: #00E5FF;
+    font-weight: 800;
+  }
+  .grupo-tabla tr.clasificado td:first-child {
+    color: #39FF14;
+  }
+  .grupo-tabla tr:not(:last-child) td {
+    border-bottom: 1px solid #1A1A1A;
+  }
+
+  @media (max-width: 900px) {
+    .grupos-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .grupos-grid { grid-template-columns: 1fr; }
+    .panel-grupos-wrap { margin: 0 10px 10px; }
+    .panel-grupos-titulo { font-size: 12px; }
+  }
 
   @media print {
     body { background: white; font-size: 10px; }
@@ -669,6 +790,22 @@
   <span class="tag win">Win Sports</span>
   <span class="tag paramount">Paramount+</span>
   <span class="nota-libre"><strong style="color:rgba(255,255,255,0.70);">DSports y Paramount+: todos los 104 partidos</strong> · Caracol/RCN: 35 partidos (señal abierta) · Disney+: 30 partidos · Win Sports: 25 partidos</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PANEL DE GRUPOS — colapsable, datos via grupos.json
+══════════════════════════════════════════ -->
+<div class="panel-grupos-wrap">
+  <div class="panel-grupos-cabecera" role="button" tabindex="0">
+    <span class="panel-grupos-titulo">Tabla de grupos</span>
+    <span class="panel-grupos-sub" id="grupos-actualizado">Cargando...</span>
+    <span class="toggle-icon">▾</span>
+  </div>
+  <div class="panel-grupos-cuerpo collapsible collapsed" id="panel-grupos-cuerpo">
+    <div class="grupos-grid" id="grupos-grid">
+      <div class="grupos-cargando">Cargando tabla de posiciones…</div>
+    </div>
+  </div>
 </div>
 
 <div class="contenido">
@@ -1743,6 +1880,83 @@
     })
     .catch(function () {
       // Si no existe resultados.json todavia, falla silenciosamente
+    });
+})();
+</script>
+
+<script>
+(function () {
+  var wrap   = document.querySelector('.panel-grupos-cabecera');
+  var cuerpo = document.getElementById('panel-grupos-cuerpo');
+  var grid   = document.getElementById('grupos-grid');
+  var subt   = document.getElementById('grupos-actualizado');
+
+  if (!wrap || !cuerpo || !grid) return;
+
+  // Toggle de colapso, mismo patron que los dias del calendario
+  wrap.addEventListener('click', function () {
+    wrap.classList.toggle('collapsed');
+    cuerpo.classList.toggle('collapsed');
+  });
+  wrap.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      wrap.click();
+    }
+  });
+
+  function pintarGrupos(data) {
+    if (!data || !data.groups) {
+      grid.innerHTML = '<div class="grupos-cargando">Tabla de grupos no disponible todavía.</div>';
+      return;
+    }
+
+    var letras = Object.keys(data.groups).sort();
+    var html = '';
+
+    letras.forEach(function (letra) {
+      var filas = data.groups[letra];
+      html += '<div class="grupo-card">';
+      html += '<div class="grupo-card-titulo">Grupo ' + letra + '</div>';
+      html += '<table class="grupo-tabla"><thead><tr>';
+      html += '<th>Equipo</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>DG</th><th>Pts</th>';
+      html += '</tr></thead><tbody>';
+
+      filas.forEach(function (fila, idx) {
+        var claseRow = idx < 2 ? 'clasificado' : '';
+        html += '<tr class="' + claseRow + '">';
+        html += '<td>' + fila.equipo + '</td>';
+        html += '<td>' + fila.pj + '</td>';
+        html += '<td>' + fila.g + '</td>';
+        html += '<td>' + fila.e + '</td>';
+        html += '<td>' + fila.p + '</td>';
+        html += '<td>' + fila.dg + '</td>';
+        html += '<td class="pts">' + fila.pts + '</td>';
+        html += '</tr>';
+      });
+
+      html += '</tbody></table></div>';
+    });
+
+    grid.innerHTML = html;
+
+    if (data.updated) {
+      var fecha = new Date(data.updated);
+      subt.textContent = 'Actualizado ' + fecha.toLocaleString('es-CO', {
+        day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit'
+      });
+    }
+  }
+
+  fetch('grupos.json?t=' + Date.now())
+    .then(function (r) {
+      if (!r.ok) return null;
+      return r.json();
+    })
+    .then(pintarGrupos)
+    .catch(function () {
+      grid.innerHTML = '<div class="grupos-cargando">Tabla de grupos no disponible todavía.</div>';
+      subt.textContent = '';
     });
 })();
 </script>
