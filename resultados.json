@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T22:30:30.241180+00:00",
+  "updated": "2026-06-23T23:57:37.100708+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -232,9 +232,9 @@
       "away_goals": 0
     },
     "Panamá vs Croacia": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "PAUSED",
+      "home_goals": 0,
+      "away_goals": 0
     },
     "Colombia vs Congo RD": {
       "status": "TIMED",
