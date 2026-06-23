@@ -1,37 +1,245 @@
-name: Actualizar resultados Mundial 2026
+#!/usr/bin/env python3
+"""
+Consulta football-data.org por ID numerico de partido y genera resultados.json.
+Ejecutado por GitHub Actions cada hora.
+"""
 
-on:
-  schedule:
-    # Cada hora entre las 10am y 1am UTC (5am - 8pm COT)
-    # Cubre todos los horarios de partidos del Mundial
-    - cron: '0 15,16,17,18,19,20,21,22,23,0,1,2 * * *'
-  workflow_dispatch:  # permite ejecutarlo manualmente desde GitHub
+import json
+import os
+import sys
+import urllib.request
+import urllib.error
+from datetime import datetime, timezone
 
-jobs:
-  actualizar:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write  # necesario para hacer commit al repo
+API_TOKEN = os.environ.get("FOOTBALL_API_TOKEN")
+if not API_TOKEN:
+    print("ERROR: falta FOOTBALL_API_TOKEN")
+    sys.exit(1)
 
-    steps:
-      - name: Checkout del repositorio
-        uses: actions/checkout@v4
+# Mapa definitivo: ID numerico -> clave exacta del HTML
+# Construido desde el log de diagnostico del 14 jun 2026
+ID_TO_KEY = {
+    537327: "México vs Sudáfrica",
+    537328: "Corea del Sur vs Rep. Checa",
+    537333: "Canadá vs Bosnia y Herz.",
+    537345: "EE.UU. vs Paraguay",
+    537334: "Qatar vs Suiza",
+    537339: "Brasil vs Marruecos",
+    537340: "Haití vs Escocia",
+    537346: "Australia vs Turquía",
+    537351: "Alemania vs Curazao",
+    537357: "Países Bajos vs Japón",
+    537352: "Costa de Marfil vs Ecuador",
+    537358: "Suecia vs Túnez",
+    537369: "España vs Cabo Verde",
+    537363: "Bélgica vs Egipto",
+    537370: "Arabia Saudita vs Uruguay",
+    537364: "Irán vs Nueva Zelanda",
+    537391: "Francia vs Senegal",
+    537392: "Irak vs Noruega",
+    537397: "Argentina vs Argelia",
+    537398: "Austria vs Jordania",
+    537403: "Portugal vs Congo RD",
+    537409: "Inglaterra vs Croacia",
+    537410: "Ghana vs Panamá",
+    537404: "Uzbekistán vs Colombia",
+    537329: "Rep. Checa vs Sudáfrica",
+    537335: "Suiza vs Bosnia y Herz.",
+    537336: "Canadá vs Qatar",
+    537330: "México vs Corea del Sur",
+    537348: "EE.UU. vs Australia",
+    537342: "Escocia vs Marruecos",
+    537341: "Brasil vs Haití",
+    537347: "Turquía vs Paraguay",
+    537359: "Países Bajos vs Suecia",
+    537353: "Alemania vs Costa de Marfil",
+    537354: "Ecuador vs Curazao",
+    537360: "Túnez vs Japón",
+    537371: "España vs Arabia Saudita",
+    537365: "Bélgica vs Irán",
+    537372: "Uruguay vs Cabo Verde",
+    537366: "Nueva Zelanda vs Egipto",
+    537399: "Argentina vs Austria",
+    537393: "Francia vs Irak",
+    537394: "Noruega vs Senegal",
+    537400: "Jordania vs Argelia",
+    537405: "Portugal vs Uzbekistán",
+    537411: "Inglaterra vs Ghana",
+    537412: "Panamá vs Croacia",
+    537406: "Colombia vs Congo RD",
+    537337: "Suiza vs Canadá",
+    537338: "Bosnia y Herz. vs Qatar",
+    537344: "Marruecos vs Haití",
+    537343: "Escocia vs Brasil",
+    537331: "Rep. Checa vs México",
+    537332: "Sudáfrica vs Corea del Sur",
+    537355: "Ecuador vs Alemania",
+    537356: "Curazao vs Costa de Marfil",
+    537361: "Túnez vs Países Bajos",
+    537362: "Japón vs Suecia",
+    537349: "Turquía vs EE.UU.",
+    537350: "Paraguay vs Australia",
+    537395: "Noruega vs Francia",
+    537396: "Senegal vs Irak",
+    537373: "Uruguay vs España",
+    537374: "Cabo Verde vs Arabia Saudita",
+    537367: "Nueva Zelanda vs Bélgica",
+    537368: "Egipto vs Irán",
+    537413: "Panamá vs Inglaterra",
+    537414: "Croacia vs Ghana",
+    537407: "Colombia vs Portugal",
+    537408: "Congo RD vs Uzbekistán",
+    537401: "Jordania vs Argentina",
+    537402: "Argelia vs Austria",
+    # Eliminatorias: IDs conocidos, claves se asignan cuando se definan equipos
+    # Por ahora se omiten; se actualizaran en una segunda iteracion
+}
 
-      - name: Configurar Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+# IDs donde el orden local/visitante de la API es el INVERSO del orden
+# usado en la clave del HTML (ej: API pone Uzbekistan de local, pero el
+# HTML dice "Colombia vs Uzbekistán"). Para estos casos hay que voltear
+# home_goals y away_goals al guardar el resultado.
+IDS_INVERTIDOS = {
+    # (vacio por ahora) - 537404 ya no necesita inversion: la clave del HTML
+    # se corrigio a "Uzbekistán vs Colombia", que coincide con el orden de la API.
+}
 
-      - name: Ejecutar script de resultados
-        env:
-          FOOTBALL_API_TOKEN: ${{ secrets.FOOTBALL_API_TOKEN }}
-        run: python actualizar_resultados.py
+def fetch_matches():
+    url = "https://api.football-data.org/v4/competitions/WC/matches"
+    req = urllib.request.Request(url, headers={"X-Auth-Token": API_TOKEN})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        print(f"HTTP {e.code}: {e.reason}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error de red: {e}")
+        sys.exit(1)
 
-      - name: Commit y push si hay cambios
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add resultados.json
-          if [ -f grupos.json ]; then git add grupos.json; fi
-          git diff --cached --quiet || git commit -m "chore: resultados actualizados $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+def fetch_standings():
+    """Consulta la tabla de posiciones de los 12 grupos. Si falla, no afecta resultados.json."""
+    url = "https://api.football-data.org/v4/competitions/WC/standings"
+    req = urllib.request.Request(url, headers={"X-Auth-Token": API_TOKEN})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        print(f"AVISO: no se pudo obtener standings ({e}). Se omite grupos.json esta corrida.")
+        return None
+
+
+# Mapa de nombres de equipo (API -> espanol del HTML), reutilizado para grupos
+EQUIPO_ES = {v: v for v in []}  # se completa abajo dinamicamente desde ID_TO_KEY
+for _key in ID_TO_KEY.values():
+    for _team in _key.split(" vs "):
+        EQUIPO_ES[_team] = _team
+# Variantes en ingles que la API usa en standings (mismas que en partidos)
+EQUIPO_ES.update({
+    "Mexico": "México", "South Africa": "Sudáfrica", "Canada": "Canadá",
+    "Switzerland": "Suiza", "Brazil": "Brasil", "Morocco": "Marruecos",
+    "Haiti": "Haití", "Scotland": "Escocia", "Germany": "Alemania",
+    "Netherlands": "Países Bajos", "Ivory Coast": "Costa de Marfil",
+    "Sweden": "Suecia", "Belgium": "Bélgica", "Egypt": "Egipto",
+    "Saudi Arabia": "Arabia Saudita", "Iran": "Irán", "France": "Francia",
+    "Iraq": "Irak", "Algeria": "Argelia", "Jordan": "Jordania",
+    "England": "Inglaterra", "Croatia": "Croacia", "Panama": "Panamá",
+    "Spain": "España", "Norway": "Noruega", "Tunisia": "Túnez",
+    "Japan": "Japón", "Turkey": "Turquía", "New Zealand": "Nueva Zelanda",
+    "Uzbekistan": "Uzbekistán", "South Korea": "Corea del Sur",
+    "Czechia": "Rep. Checa", "Congo DR": "Congo RD", "Curaçao": "Curazao",
+    "Cape Verde Islands": "Cabo Verde", "Bosnia-Herzegovina": "Bosnia y Herz.",
+    "United States": "EE.UU.",
+})
+
+
+def build_groups(data):
+    """Convierte la respuesta de standings en un dict simple: {grupo: [equipos ordenados]}."""
+    grupos = {}
+    if not data:
+        return grupos
+
+    for standing in data.get("standings", []):
+        group_name = standing.get("group")  # ej: "GROUP_A"
+        if not group_name:
+            continue
+        letra = group_name.replace("GROUP_", "")
+        tabla = standing.get("table", [])
+
+        filas = []
+        for row in tabla:
+            nombre_api = row.get("team", {}).get("name", "")
+            nombre_es  = EQUIPO_ES.get(nombre_api, nombre_api)
+            filas.append({
+                "equipo":   nombre_es,
+                "pj":       row.get("playedGames"),
+                "g":        row.get("won"),
+                "e":        row.get("draw"),
+                "p":        row.get("lost"),
+                "gf":       row.get("goalsFor"),
+                "gc":       row.get("goalsAgainst"),
+                "dg":       row.get("goalDifference"),
+                "pts":      row.get("points"),
+            })
+        grupos[letra] = filas
+
+    return grupos
+
+
+def main():
+    print(f"[{datetime.now(timezone.utc).isoformat()}] Consultando API...")
+    data = fetch_matches()
+    results = {}
+
+    for match in data.get("matches", []):
+        mid    = match.get("id")
+        key    = ID_TO_KEY.get(mid)
+        if not key:
+            continue  # partido de eliminatoria sin clave asignada, se omite
+
+        status = match.get("status")
+        score  = match.get("score", {})
+        full   = score.get("fullTime", {})
+        hg     = full.get("home")
+        ag     = full.get("away")
+
+        # Si el orden de la API es inverso al del HTML, voltear los goles
+        if mid in IDS_INVERTIDOS:
+            hg, ag = ag, hg
+
+        results[key] = {
+            "status":     status,
+            "home_goals": hg,
+            "away_goals": ag,
+        }
+
+    output = {
+        "updated": datetime.now(timezone.utc).isoformat(),
+        "matches": results,
+    }
+
+    with open("resultados.json", "w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+
+    terminados = sum(1 for v in results.values() if v["status"] == "FINISHED")
+    print(f"Guardado resultados.json: {len(results)} partidos, {terminados} finalizados.")
+
+    # --- Grupos: independiente de resultados.json. Si falla, no interrumpe nada arriba. ---
+    try:
+        standings_data = fetch_standings()
+        grupos = build_groups(standings_data)
+        if grupos:
+            grupos_output = {
+                "updated": datetime.now(timezone.utc).isoformat(),
+                "groups": grupos,
+            }
+            with open("grupos.json", "w", encoding="utf-8") as f:
+                json.dump(grupos_output, f, ensure_ascii=False, indent=2)
+            print(f"Guardado grupos.json: {len(grupos)} grupos.")
+        else:
+            print("AVISO: grupos.json no actualizado (sin datos de standings).")
+    except Exception as e:
+        print(f"AVISO: error generando grupos.json ({e}). No afecta resultados.json.")
+
+if __name__ == "__main__":
+    main()
