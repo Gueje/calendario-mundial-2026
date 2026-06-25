@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T17:12:04.559027+00:00",
+  "updated": "2026-06-25T20:00:44.524413+00:00",
   "groups": {
     "Group A": [
       {
@@ -188,47 +188,47 @@
     "Group E": [
       {
         "equipo": "Alemania",
-        "pj": 2,
+        "pj": 3,
         "g": 2,
-        "e": 0,
+        "e": 1,
         "p": 0,
         "gf": 9,
         "gc": 2,
         "dg": 7,
-        "pts": 6
+        "pts": 7
       },
       {
         "equipo": "Costa de Marfil",
-        "pj": 2,
+        "pj": 3,
         "g": 1,
-        "e": 0,
+        "e": 1,
         "p": 1,
         "gf": 2,
         "gc": 2,
         "dg": 0,
-        "pts": 3
+        "pts": 4
       },
       {
         "equipo": "Ecuador",
-        "pj": 2,
+        "pj": 3,
         "g": 0,
-        "e": 1,
+        "e": 2,
         "p": 1,
         "gf": 0,
         "gc": 1,
         "dg": -1,
-        "pts": 1
+        "pts": 2
       },
       {
         "equipo": "Curazao",
-        "pj": 2,
+        "pj": 3,
         "g": 0,
-        "e": 1,
+        "e": 2,
         "p": 1,
         "gf": 1,
         "gc": 7,
         "dg": -6,
-        "pts": 1
+        "pts": 2
       }
     ],
     "Group F": [
