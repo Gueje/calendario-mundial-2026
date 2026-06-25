@@ -1,49 +1,49 @@
 {
-  "updated": "2026-06-24T23:03:33.754628+00:00",
+  "updated": "2026-06-25T03:35:26.251003+00:00",
   "groups": {
     "Group A": [
       {
         "equipo": "México",
-        "pj": 2,
-        "g": 2,
+        "pj": 3,
+        "g": 3,
         "e": 0,
         "p": 0,
-        "gf": 3,
+        "gf": 6,
         "gc": 0,
-        "dg": 3,
-        "pts": 6
+        "dg": 6,
+        "pts": 9
       },
       {
-        "equipo": "Corea del Sur",
-        "pj": 2,
+        "equipo": "Sudáfrica",
+        "pj": 3,
         "g": 1,
-        "e": 0,
-        "p": 1,
-        "gf": 2,
-        "gc": 2,
-        "dg": 0,
-        "pts": 3
-      },
-      {
-        "equipo": "Rep. Checa",
-        "pj": 2,
-        "g": 0,
         "e": 1,
         "p": 1,
         "gf": 2,
         "gc": 3,
         "dg": -1,
-        "pts": 1
+        "pts": 4
       },
       {
-        "equipo": "Sudáfrica",
-        "pj": 2,
+        "equipo": "Corea del Sur",
+        "pj": 3,
+        "g": 1,
+        "e": 0,
+        "p": 2,
+        "gf": 2,
+        "gc": 3,
+        "dg": -1,
+        "pts": 3
+      },
+      {
+        "equipo": "Rep. Checa",
+        "pj": 3,
         "g": 0,
         "e": 1,
-        "p": 1,
-        "gf": 1,
-        "gc": 3,
-        "dg": -2,
+        "p": 2,
+        "gf": 2,
+        "gc": 6,
+        "dg": -4,
         "pts": 1
       }
     ],
@@ -100,21 +100,21 @@
         "g": 2,
         "e": 1,
         "p": 0,
-        "gf": 6,
+        "gf": 7,
         "gc": 1,
-        "dg": 5,
+        "dg": 6,
         "pts": 7
       },
       {
         "equipo": "Marruecos",
         "pj": 3,
-        "g": 1,
-        "e": 2,
+        "g": 2,
+        "e": 1,
         "p": 0,
-        "gf": 4,
+        "gf": 6,
         "gc": 3,
-        "dg": 1,
-        "pts": 5
+        "dg": 3,
+        "pts": 7
       },
       {
         "equipo": "Escocia",
@@ -123,20 +123,20 @@
         "e": 0,
         "p": 2,
         "gf": 1,
-        "gc": 3,
-        "dg": -2,
+        "gc": 4,
+        "dg": -3,
         "pts": 3
       },
       {
         "equipo": "Haití",
         "pj": 3,
         "g": 0,
-        "e": 1,
-        "p": 2,
+        "e": 0,
+        "p": 3,
         "gf": 2,
-        "gc": 6,
-        "dg": -4,
-        "pts": 1
+        "gc": 8,
+        "dg": -6,
+        "pts": 0
       }
     ],
     "Group D": [
