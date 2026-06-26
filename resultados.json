@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T22:21:32.798645+00:00",
+  "updated": "2026-06-26T00:09:35.530867+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -282,14 +282,14 @@
       "away_goals": 2
     },
     "Túnez vs Países Bajos": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "LIVE",
+      "home_goals": 0,
+      "away_goals": 2
     },
     "Japón vs Suecia": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "PAUSED",
+      "home_goals": 0,
+      "away_goals": 0
     },
     "Turquía vs EE.UU.": {
       "status": "TIMED",
