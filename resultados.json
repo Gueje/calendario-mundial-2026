@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-26T19:48:20.800596+00:00",
+  "updated": "2026-06-26T21:19:25.219125+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -302,13 +302,13 @@
       "away_goals": 0
     },
     "Noruega vs Francia": {
-      "status": "LIVE",
+      "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 3
+      "away_goals": 4
     },
     "Senegal vs Irak": {
-      "status": "LIVE",
-      "home_goals": 1,
+      "status": "FINISHED",
+      "home_goals": 5,
       "away_goals": 0
     },
     "Uruguay vs España": {
