@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T20:08:03.550416+00:00",
+  "updated": "2026-06-27T22:02:29.145073+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -332,14 +332,14 @@
       "away_goals": 1
     },
     "Panamá vs Inglaterra": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "PAUSED",
+      "home_goals": 0,
+      "away_goals": 0
     },
     "Croacia vs Ghana": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null
+      "status": "PAUSED",
+      "home_goals": 1,
+      "away_goals": 0
     },
     "Colombia vs Portugal": {
       "status": "TIMED",
