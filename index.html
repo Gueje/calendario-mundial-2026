@@ -574,6 +574,7 @@
     color: #FFFFFF;
   }
   .panel-grupos-cabecera.collapsed .toggle-icon,
+  .panel-bracket-cabecera.collapsed .toggle-icon,
   .dia-cabecera.collapsed .toggle-icon {
     transform: rotate(-90deg);
   }
@@ -757,6 +758,201 @@
     display: none !important;
   }
 
+
+  /* ══════════════════════════════════════════
+     PANEL DE BRACKET / LLAVES
+  ══════════════════════════════════════════ */
+  .panel-bracket-wrap {
+    margin: 0 20px 14px;
+    border: 1px solid #222222;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #111111;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
+  .panel-bracket-cabecera {
+    background: #FF9500;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .panel-bracket-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 14px;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .panel-bracket-sub {
+    font-size: 9.5px;
+    color: rgba(0,0,0,0.65);
+    margin-left: auto;
+  }
+  .panel-bracket-cabecera .toggle-icon {
+    color: #000000;
+    opacity: 0.75;
+  }
+  .panel-bracket-cuerpo {
+    padding: 10px 0 14px;
+  }
+  .panel-bracket-cuerpo.collapsed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+  .bracket-scroll-hint {
+    display: none;
+    text-align: center;
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.45);
+    padding: 0 14px 8px;
+    font-style: italic;
+  }
+  .bracket-cargando {
+    color: #888888;
+    font-size: 11px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Contenedor con scroll horizontal */
+  .bracket-scroll {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    padding: 6px 14px 10px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+  .bracket-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+  .bracket-scroll::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 3px;
+  }
+
+  /* Cada columna de ronda */
+  .bracket-col {
+    flex: 0 0 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 6px;
+    scroll-snap-align: start;
+  }
+  .bracket-col-titulo {
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #888888;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #2A2A2A;
+    margin-bottom: 4px;
+  }
+  .bracket-col.col-final {
+    flex: 0 0 150px;
+    justify-content: center;
+  }
+
+  /* Tarjeta de partido */
+  .bracket-match {
+    background: #0A0A0A;
+    border: 1px solid #2A2A2A;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 10.5px;
+  }
+  .bracket-team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 8px;
+    color: #AAAAAA;
+    border-bottom: 1px solid #1A1A1A;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bracket-team:last-child {
+    border-bottom: none;
+  }
+  .bracket-team .nombre {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .bracket-team .marcador-bracket {
+    font-weight: 800;
+    margin-left: 6px;
+    flex-shrink: 0;
+    color: #00E5FF;
+  }
+  .bracket-team.ganador {
+    color: #FFFFFF;
+    background: rgba(57,255,20,0.08);
+  }
+  .bracket-team.ganador .nombre {
+    font-weight: 700;
+  }
+  .bracket-team.ganador .marcador-bracket {
+    color: #39FF14;
+  }
+  .bracket-team.pendiente .nombre {
+    color: #555555;
+    font-style: italic;
+  }
+
+  /* Conector visual entre rondas (linea simple) */
+  .bracket-col:not(.col-r32):not(.col-final)::before {
+    content: '';
+  }
+
+  /* Final: trofeo + texto, estilo destacado */
+  .bracket-final-card {
+    background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%);
+    border-radius: 4px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+  .bracket-final-card .final-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 11px;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .bracket-final-card .final-team {
+    color: #000000;
+    font-weight: 700;
+    font-size: 11.5px;
+    padding: 2px 0;
+  }
+
+  @media (max-width: 900px) {
+    .bracket-scroll-hint { display: block; }
+  }
+  @media (max-width: 600px) {
+    .panel-bracket-wrap { margin: 0 10px 10px; }
+    .panel-bracket-titulo { font-size: 12px; }
+    .bracket-col { flex: 0 0 150px; }
+  }
+
   @media print {
     body { background: white; font-size: 10px; }
     .encabezado,
@@ -831,6 +1027,23 @@
   <div class="panel-grupos-cuerpo collapsible collapsed" id="panel-grupos-cuerpo">
     <div class="grupos-grid" id="grupos-grid">
       <div class="grupos-cargando">Cargando tabla de posiciones…</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PANEL DE LLAVES / BRACKET — colapsable, datos via bracket.json
+══════════════════════════════════════════ -->
+<div class="panel-bracket-wrap">
+  <div class="panel-bracket-cabecera" role="button" tabindex="0">
+    <span class="panel-bracket-titulo">Llaves del Mundial</span>
+    <span class="panel-bracket-sub" id="bracket-actualizado">Cargando...</span>
+    <span class="toggle-icon">▾</span>
+  </div>
+  <div class="panel-bracket-cuerpo collapsible collapsed" id="panel-bracket-cuerpo">
+    <div class="bracket-scroll-hint">← Deslizá horizontalmente para ver todo el cuadro →</div>
+    <div class="bracket-scroll" id="bracket-scroll">
+      <div class="bracket-cargando">Cargando llaves del torneo…</div>
     </div>
   </div>
 </div>
@@ -2049,6 +2262,113 @@
       }
     });
   });
+})();
+</script>
+
+<script>
+(function () {
+  var wrap   = document.querySelector('.panel-bracket-cabecera');
+  var cuerpo = document.getElementById('panel-bracket-cuerpo');
+  var scroll = document.getElementById('bracket-scroll');
+  var subt   = document.getElementById('bracket-actualizado');
+
+  if (!wrap || !cuerpo || !scroll) return;
+
+  wrap.addEventListener('click', function () {
+    wrap.classList.toggle('collapsed');
+    cuerpo.classList.toggle('collapsed');
+  });
+  wrap.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      wrap.click();
+    }
+  });
+
+  // Orden visual de columnas, izquierda a derecha, igual que la imagen de referencia
+  var COLUMNAS = [
+    { titulo: 'Ronda de 32',  ids: ['A1','A2','A3','A4','A5','A6','A7','A8'] },
+    { titulo: 'Octavos',      ids: ['QF1','QF2','QF3','QF4'] },
+    { titulo: 'Cuartos',      ids: ['CU1','CU2'] },
+    { titulo: 'Semifinal',    ids: ['SF1'] },
+    { titulo: 'Final',        ids: ['FINAL'], esFinal: true },
+    { titulo: 'Semifinal',    ids: ['SF2'] },
+    { titulo: 'Cuartos',      ids: ['CU3','CU4'] },
+    { titulo: 'Octavos',      ids: ['QF5','QF6','QF7','QF8'] },
+    { titulo: 'Ronda de 32',  ids: ['B1','B2','B3','B4','B5','B6','B7','B8'] },
+  ];
+
+  function renderTeam(nombre, golesEs, esGanador, esLocal) {
+    var clase = 'bracket-team';
+    if (esGanador) clase += ' ganador';
+    if (!nombre) clase += ' pendiente';
+    var texto = nombre || 'Por definir';
+    var marcador = (golesEs !== null && golesEs !== undefined) ? '<span class="marcador-bracket">' + golesEs + '</span>' : '';
+    return '<div class="' + clase + '"><span class="nombre">' + texto + '</span>' + marcador + '</div>';
+  }
+
+  function renderMatch(m) {
+    if (!m) return '<div class="bracket-match">' + renderTeam(null) + renderTeam(null) + '</div>';
+
+    var home = m.home, away = m.away;
+    var hg = (m.status === 'FINISHED') ? m.home_goals : null;
+    var ag = (m.status === 'FINISHED') ? m.away_goals : null;
+    var ganadorHome = m.ganador && m.ganador === home;
+    var ganadorAway = m.ganador && m.ganador === away;
+
+    return '<div class="bracket-match">' +
+      renderTeam(home, hg, ganadorHome, true) +
+      renderTeam(away, ag, ganadorAway, false) +
+      '</div>';
+  }
+
+  function renderFinal(m) {
+    var ganador = m && m.ganador;
+    var texto = ganador ? ganador : 'Por definir';
+    return '<div class="bracket-final-card">' +
+      '<div class="final-label">🏆 Campeón</div>' +
+      '<div class="final-team">' + texto + '</div>' +
+      '</div>';
+  }
+
+  function pintarBracket(data) {
+    if (!data || !data.matches) {
+      scroll.innerHTML = '<div class="bracket-cargando">Llaves no disponibles todavía.</div>';
+      return;
+    }
+    var matches = data.matches;
+    var html = '';
+
+    COLUMNAS.forEach(function (col) {
+      html += '<div class="bracket-col' + (col.esFinal ? ' col-final' : '') + '">';
+      html += '<div class="bracket-col-titulo">' + col.titulo + '</div>';
+      col.ids.forEach(function (id) {
+        var m = matches[id];
+        html += col.esFinal ? renderFinal(m) : renderMatch(m);
+      });
+      html += '</div>';
+    });
+
+    scroll.innerHTML = html;
+
+    if (data.updated) {
+      var fecha = new Date(data.updated);
+      subt.textContent = 'Actualizado ' + fecha.toLocaleString('es-CO', {
+        day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit'
+      });
+    }
+  }
+
+  fetch('bracket.json?t=' + Date.now())
+    .then(function (r) {
+      if (!r.ok) return null;
+      return r.json();
+    })
+    .then(pintarBracket)
+    .catch(function () {
+      scroll.innerHTML = '<div class="bracket-cargando">Llaves no disponibles todavía.</div>';
+      subt.textContent = '';
+    });
 })();
 </script>
 </body>
