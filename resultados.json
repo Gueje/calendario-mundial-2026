@@ -1,365 +1,509 @@
 {
-  "updated": "2026-06-28T16:10:46.650754+00:00",
+  "updated": "2026-06-28T16:42:48.840476+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Corea del Sur vs Rep. Checa": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Canadá vs Bosnia y Herz.": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "EE.UU. vs Paraguay": {
       "status": "FINISHED",
       "home_goals": 4,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Qatar vs Suiza": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Brasil vs Marruecos": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Haití vs Escocia": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Australia vs Turquía": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Alemania vs Curazao": {
       "status": "FINISHED",
       "home_goals": 7,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Países Bajos vs Japón": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Costa de Marfil vs Ecuador": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Suecia vs Túnez": {
       "status": "FINISHED",
       "home_goals": 5,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "España vs Cabo Verde": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Bélgica vs Egipto": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Arabia Saudita vs Uruguay": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Irán vs Nueva Zelanda": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Francia vs Senegal": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Irak vs Noruega": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 4
+      "away_goals": 4,
+      "pen_home": null,
+      "pen_away": null
     },
     "Argentina vs Argelia": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Austria vs Jordania": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Portugal vs Congo RD": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Inglaterra vs Croacia": {
       "status": "FINISHED",
       "home_goals": 4,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Ghana vs Panamá": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Uzbekistán vs Colombia": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 3
+      "away_goals": 3,
+      "pen_home": null,
+      "pen_away": null
     },
     "Rep. Checa vs Sudáfrica": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Suiza vs Bosnia y Herz.": {
       "status": "FINISHED",
       "home_goals": 4,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Canadá vs Qatar": {
       "status": "FINISHED",
       "home_goals": 6,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "México vs Corea del Sur": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "EE.UU. vs Australia": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Escocia vs Marruecos": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Brasil vs Haití": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Turquía vs Paraguay": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Países Bajos vs Suecia": {
       "status": "FINISHED",
       "home_goals": 5,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Alemania vs Costa de Marfil": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Ecuador vs Curazao": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Túnez vs Japón": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 4
+      "away_goals": 4,
+      "pen_home": null,
+      "pen_away": null
     },
     "España vs Arabia Saudita": {
       "status": "FINISHED",
       "home_goals": 4,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Bélgica vs Irán": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Uruguay vs Cabo Verde": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Nueva Zelanda vs Egipto": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 3
+      "away_goals": 3,
+      "pen_home": null,
+      "pen_away": null
     },
     "Argentina vs Austria": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Francia vs Irak": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Noruega vs Senegal": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Jordania vs Argelia": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Portugal vs Uzbekistán": {
       "status": "FINISHED",
       "home_goals": 5,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Inglaterra vs Ghana": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Panamá vs Croacia": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Colombia vs Congo RD": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Suiza vs Canadá": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Bosnia y Herz. vs Qatar": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Marruecos vs Haití": {
       "status": "FINISHED",
       "home_goals": 4,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Escocia vs Brasil": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 3
+      "away_goals": 3,
+      "pen_home": null,
+      "pen_away": null
     },
     "Rep. Checa vs México": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 3
+      "away_goals": 3,
+      "pen_home": null,
+      "pen_away": null
     },
     "Sudáfrica vs Corea del Sur": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Ecuador vs Alemania": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Curazao vs Costa de Marfil": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Túnez vs Países Bajos": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 3
+      "away_goals": 3,
+      "pen_home": null,
+      "pen_away": null
     },
     "Japón vs Suecia": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Turquía vs EE.UU.": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Paraguay vs Australia": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Noruega vs Francia": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 4
+      "away_goals": 4,
+      "pen_home": null,
+      "pen_away": null
     },
     "Senegal vs Irak": {
       "status": "FINISHED",
       "home_goals": 5,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Uruguay vs España": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Cabo Verde vs Arabia Saudita": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Nueva Zelanda vs Bélgica": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 5
+      "away_goals": 5,
+      "pen_home": null,
+      "pen_away": null
     },
     "Egipto vs Irán": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Panamá vs Inglaterra": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 2
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "Croacia vs Ghana": {
       "status": "FINISHED",
       "home_goals": 2,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Colombia vs Portugal": {
       "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 0
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "Congo RD vs Uzbekistán": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 1
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "Jordania vs Argentina": {
       "status": "FINISHED",
       "home_goals": 1,
-      "away_goals": 3
+      "away_goals": 3,
+      "pen_home": null,
+      "pen_away": null
     },
     "Argelia vs Austria": {
       "status": "FINISHED",
       "home_goals": 3,
-      "away_goals": 3
+      "away_goals": 3,
+      "pen_home": null,
+      "pen_away": null
     }
   }
 }
