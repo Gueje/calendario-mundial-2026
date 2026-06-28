@@ -186,6 +186,105 @@ def build_groups(data):
     return grupos
 
 
+def determinar_ganador(home, away, info):
+    """
+    Determina el ganador de un partido de eliminatoria.
+    info viene de 'results' (home_goals, away_goals, pen_home, pen_away, status).
+    Retorna el nombre del equipo ganador, o None si el partido no ha terminado.
+    """
+    if not info or info.get("status") != "FINISHED":
+        return None
+
+    hg, ag = info.get("home_goals"), info.get("away_goals")
+    if hg is None or ag is None:
+        return None
+
+    if hg > ag:
+        return home
+    if ag > hg:
+        return away
+
+    # Empate en tiempo reglamentario: decide por penales
+    ph, pa = info.get("pen_home"), info.get("pen_away")
+    if ph is not None and pa is not None:
+        if ph > pa:
+            return home
+        if pa > ph:
+            return away
+
+    return None  # empate sin penales registrados todavia
+
+
+def actualizar_bracket(results):
+    """
+    Lee bracket.json, propaga ganadores segun 'results' (de resultados.json)
+    y guarda el bracket actualizado. Totalmente independiente: si falla,
+    no afecta resultados.json ni grupos.json.
+    """
+    bracket_path = "bracket.json"
+    try:
+        with open(bracket_path, "r", encoding="utf-8") as f:
+            bracket = json.load(f)
+    except FileNotFoundError:
+        print("AVISO: no existe bracket.json en el repo, se omite esta seccion.")
+        return
+    except Exception as e:
+        print(f"AVISO: error leyendo bracket.json ({e}).")
+        return
+
+    matches = bracket.get("matches", {})
+
+    # Procesar en orden de ronda para que los ganadores se propaguen en cascada
+    orden_rondas = ["32", "16", "8", "4", "1"]
+    for ronda in orden_rondas:
+        for mid, m in matches.items():
+            if m.get("ronda") != ronda:
+                continue
+
+            # Resolver home
+            if m.get("home_fuente") == "ganador":
+                origen = matches.get(m.get("home_de"), {})
+                m["home"] = origen.get("ganador")
+            # Resolver away
+            if m.get("away_fuente") == "ganador":
+                origen = matches.get(m.get("away_de"), {})
+                m["away"] = origen.get("ganador")
+
+            home, away = m.get("home"), m.get("away")
+            if not home or not away:
+                m["ganador"] = None
+                m["status"] = "PENDIENTE"
+                continue
+
+            key = f"{home} vs {away}"
+            info = results.get(key)
+            if not info:
+                # Probar el orden inverso por si la clave esta volteada
+                key_inv = f"{away} vs {home}"
+                info = results.get(key_inv)
+
+            if info:
+                m["status"]      = info.get("status")
+                m["home_goals"]  = info.get("home_goals")
+                m["away_goals"]  = info.get("away_goals")
+                m["pen_home"]    = info.get("pen_home")
+                m["pen_away"]    = info.get("pen_away")
+                m["ganador"]     = determinar_ganador(home, away, info)
+            else:
+                m["status"]  = "SCHEDULED"
+                m["ganador"] = None
+
+    bracket_output = {
+        "updated": datetime.now(timezone.utc).isoformat(),
+        "matches": matches,
+    }
+    with open(bracket_path, "w", encoding="utf-8") as f:
+        json.dump(bracket_output, f, ensure_ascii=False, indent=2)
+
+    resueltos = sum(1 for m in matches.values() if m.get("ganador"))
+    print(f"Guardado bracket.json: {resueltos}/{len(matches)} partidos con ganador determinado.")
+
+
 def main():
     print(f"[{datetime.now(timezone.utc).isoformat()}] Consultando API...")
     data = fetch_matches()
@@ -203,14 +302,22 @@ def main():
         hg     = full.get("home")
         ag     = full.get("away")
 
-        # Si el orden de la API es inverso al del HTML, voltear los goles
+        # Penales (decisivos en eliminatorias si hay empate tras tiempo extra)
+        pen    = score.get("penalties", {}) or {}
+        pen_h  = pen.get("home")
+        pen_a  = pen.get("away")
+
+        # Si el orden de la API es inverso al del HTML, voltear los goles y penales
         if mid in IDS_INVERTIDOS:
             hg, ag = ag, hg
+            pen_h, pen_a = pen_a, pen_h
 
         results[key] = {
-            "status":     status,
-            "home_goals": hg,
-            "away_goals": ag,
+            "status":      status,
+            "home_goals":  hg,
+            "away_goals":  ag,
+            "pen_home":    pen_h,
+            "pen_away":    pen_a,
         }
 
     output = {
@@ -223,6 +330,12 @@ def main():
 
     terminados = sum(1 for v in results.values() if v["status"] == "FINISHED")
     print(f"Guardado resultados.json: {len(results)} partidos, {terminados} finalizados.")
+
+    # --- Bracket: propaga ganadores. Independiente, si falla no afecta lo anterior. ---
+    try:
+        actualizar_bracket(results)
+    except Exception as e:
+        print(f"AVISO: error actualizando bracket.json ({e}). No afecta resultados.json.")
 
     # --- Grupos: independiente de resultados.json. Si falla, no interrumpe nada arriba. ---
     try:
