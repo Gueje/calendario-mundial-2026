@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T22:02:29.648390+00:00",
+  "updated": "2026-06-28T00:02:32.271496+00:00",
   "groups": {
     "Group A": [
       {
@@ -464,71 +464,71 @@
     "Group K": [
       {
         "equipo": "Colombia",
-        "pj": 2,
+        "pj": 3,
         "g": 2,
-        "e": 0,
+        "e": 1,
         "p": 0,
         "gf": 4,
         "gc": 1,
         "dg": 3,
-        "pts": 6
+        "pts": 7
       },
       {
         "equipo": "Portugal",
-        "pj": 2,
+        "pj": 3,
         "g": 1,
-        "e": 1,
+        "e": 2,
         "p": 0,
         "gf": 6,
         "gc": 1,
         "dg": 5,
-        "pts": 4
-      },
-      {
-        "equipo": "Congo RD",
-        "pj": 2,
-        "g": 0,
-        "e": 1,
-        "p": 1,
-        "gf": 1,
-        "gc": 2,
-        "dg": -1,
-        "pts": 1
+        "pts": 5
       },
       {
         "equipo": "Uzbekistán",
-        "pj": 2,
-        "g": 0,
+        "pj": 3,
+        "g": 1,
         "e": 0,
         "p": 2,
-        "gf": 1,
+        "gf": 2,
         "gc": 8,
-        "dg": -7,
-        "pts": 0
+        "dg": -6,
+        "pts": 3
+      },
+      {
+        "equipo": "Congo RD",
+        "pj": 3,
+        "g": 0,
+        "e": 1,
+        "p": 2,
+        "gf": 1,
+        "gc": 3,
+        "dg": -2,
+        "pts": 1
       }
     ],
     "Group L": [
+      {
+        "equipo": "Inglaterra",
+        "pj": 3,
+        "g": 2,
+        "e": 1,
+        "p": 0,
+        "gf": 6,
+        "gc": 2,
+        "dg": 4,
+        "pts": 7
+      },
       {
         "equipo": "Croacia",
         "pj": 3,
         "g": 2,
         "e": 0,
         "p": 1,
-        "gf": 4,
-        "gc": 4,
+        "gf": 5,
+        "gc": 5,
         "dg": 0,
         "pts": 6
-      },
-      {
-        "equipo": "Inglaterra",
-        "pj": 3,
-        "g": 1,
-        "e": 2,
-        "p": 0,
-        "gf": 4,
-        "gc": 2,
-        "dg": 2,
-        "pts": 5
       },
       {
         "equipo": "Ghana",
@@ -536,8 +536,8 @@
         "g": 1,
         "e": 1,
         "p": 1,
-        "gf": 1,
-        "gc": 1,
+        "gf": 2,
+        "gc": 2,
         "dg": 0,
         "pts": 4
       },
@@ -545,12 +545,12 @@
         "equipo": "Panamá",
         "pj": 3,
         "g": 0,
-        "e": 1,
-        "p": 2,
+        "e": 0,
+        "p": 3,
         "gf": 0,
-        "gc": 2,
-        "dg": -2,
-        "pts": 1
+        "gc": 4,
+        "dg": -4,
+        "pts": 0
       }
     ]
   }
