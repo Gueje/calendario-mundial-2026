@@ -717,6 +717,10 @@
   .grupo-tabla tr.clasificado td:first-child {
     color: #39FF14;
   }
+  .grupo-tabla tr.tercero-clasificado td:first-child {
+    color: #1E90FF;
+    font-weight: 800;
+  }
   .grupo-tabla tr:not(:last-child) td {
     border-bottom: 1px solid #1A1A1A;
   }
@@ -728,6 +732,29 @@
     .grupos-grid { grid-template-columns: 1fr; }
     .panel-grupos-wrap { margin: 0 10px 10px; }
     .panel-grupos-titulo { font-size: 12px; }
+  }
+
+
+  /* ══════════════════════════════════════════
+     COLAPSO POR FASE COMPLETA
+  ══════════════════════════════════════════ */
+  .fase-header {
+    cursor: pointer;
+    user-select: none;
+  }
+  .fase-header .fase-toggle-icon {
+    margin-left: auto;
+    color: inherit;
+    opacity: 0.65;
+  }
+  .fase-header:hover .fase-toggle-icon {
+    opacity: 1;
+  }
+  .fase-header.collapsed .fase-toggle-icon {
+    transform: rotate(-90deg);
+  }
+  .fase-oculto {
+    display: none !important;
   }
 
   @media print {
@@ -811,7 +838,7 @@
 <div class="contenido">
 
   <!-- ════════ FASE DE GRUPOS ════════ -->
-  <div class="fase-header">Fase de Grupos <span class="fechas">11 jun – 27 jun · 72 partidos</span></div>
+  <div class="fase-header" role="button" tabindex="0">Fase de Grupos <span class="fechas">11 jun – 27 jun · 72 partidos</span><span class="toggle-icon fase-toggle-icon">▾</span></div>
 
   <!-- JUE 11 JUN -->
   <div class="dia">
@@ -1563,7 +1590,7 @@
   </div>
 
   <!-- ════════ RONDA DE 32 ════════ -->
-  <div class="fase-header">Ronda de 32 <span class="fechas">28 jun – 3 jul · Nueva fase, primera vez en la historia</span></div>
+  <div class="fase-header" role="button" tabindex="0">Ronda de 32 <span class="fechas">28 jun – 3 jul · Nueva fase, primera vez en la historia</span><span class="toggle-icon fase-toggle-icon">▾</span></div>
 
   <!-- DOM 28 JUN -->
   <div class="dia-elim">
@@ -1571,7 +1598,7 @@
     <div class="partido-elim">
       <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
       <div class="partido-info">
-        <div class="partido-equipos">2do A vs. 2do B</div>
+        <div class="partido-equipos">Sudáfrica <span class="vs">vs</span> Canadá<span class="marcador" data-match="Sudáfrica vs Canadá"></span></div>
         <div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div>
       </div>
     </div>
@@ -1582,15 +1609,15 @@
     <div class="elim-ronda">Lun 29 Jun · 3 partidos</div>
     <div class="partido-elim">
       <div class="partido-hora">12:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro C vs. 2do F</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Brasil <span class="vs">vs</span> Japón<span class="marcador" data-match="Brasil vs Japón"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">3:30<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro E vs. Mejor 3ro</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Alemania <span class="vs">vs</span> Paraguay<span class="marcador" data-match="Alemania vs Paraguay"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">8:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro F vs. 2do C</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Países Bajos <span class="vs">vs</span> Marruecos<span class="marcador" data-match="Países Bajos vs Marruecos"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
   </div>
 
@@ -1599,15 +1626,15 @@
     <div class="elim-ronda">Mar 30 Jun · 3 partidos</div>
     <div class="partido-elim">
       <div class="partido-hora">12:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">2do E vs. 2do I</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Costa de Marfil <span class="vs">vs</span> Noruega<span class="marcador" data-match="Costa de Marfil vs Noruega"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">4:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro I vs. Mejor 3ro</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Francia <span class="vs">vs</span> Suecia<span class="marcador" data-match="Francia vs Suecia"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">8:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro A vs. Mejor 3ro</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">México <span class="vs">vs</span> Ecuador<span class="marcador" data-match="México vs Ecuador"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
   </div>
 
@@ -1616,15 +1643,15 @@
     <div class="elim-ronda">Mié 1 Jul · 3 partidos</div>
     <div class="partido-elim">
       <div class="partido-hora">11:00<span class="am-pm">a.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro L vs. Mejor 3ro</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Inglaterra <span class="vs">vs</span> Congo RD<span class="marcador" data-match="Inglaterra vs Congo RD"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">3:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro G vs. Mejor 3ro</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Bélgica <span class="vs">vs</span> Senegal<span class="marcador" data-match="Bélgica vs Senegal"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">7:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro D vs. Mejor 3ro</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">EE.UU. <span class="vs">vs</span> Bosnia y Herz.<span class="marcador" data-match="EE.UU. vs Bosnia y Herz."></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
   </div>
 
@@ -1633,15 +1660,15 @@
     <div class="elim-ronda">Jue 2 Jul · 3 partidos</div>
     <div class="partido-elim">
       <div class="partido-hora">2:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro H vs. 2do J</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">España <span class="vs">vs</span> Austria<span class="marcador" data-match="España vs Austria"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">6:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">2do K vs. 2do L</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Portugal <span class="vs">vs</span> Croacia<span class="marcador" data-match="Portugal vs Croacia"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">10:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro B vs. Mejor 3ro</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Suiza <span class="vs">vs</span> Argelia<span class="marcador" data-match="Suiza vs Argelia"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
   </div>
 
@@ -1650,20 +1677,20 @@
     <div class="elim-ronda">Vie 3 Jul · 3 partidos</div>
     <div class="partido-elim">
       <div class="partido-hora">1:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">2do D vs. 2do G</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Australia <span class="vs">vs</span> Egipto<span class="marcador" data-match="Australia vs Egipto"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">5:00<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro J vs. 2do H</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Argentina <span class="vs">vs</span> Cabo Verde<span class="marcador" data-match="Argentina vs Cabo Verde"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
     <div class="partido-elim">
       <div class="partido-hora">8:30<span class="am-pm">p.m.</span></div>
-      <div class="partido-info"><div class="partido-equipos">1ro K vs. Mejor 3ro</div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
+      <div class="partido-info"><div class="partido-equipos">Colombia <span class="vs">vs</span> Ghana<span class="marcador" data-match="Colombia vs Ghana"></span></div><div class="partido-canales" style="margin-top:3px;"><span class="tag dsports">DSports</span><span class="tag paramount">Paramount+</span></div></div>
     </div>
   </div>
 
   <!-- ════════ OCTAVOS ════════ -->
-  <div class="fase-header">Octavos de Final (Ronda de 16) <span class="fechas">4 jul – 7 jul · Desde aquí solo FOX/Caracol/RCN/DSports</span></div>
+  <div class="fase-header" role="button" tabindex="0">Octavos de Final (Ronda de 16) <span class="fechas">4 jul – 7 jul · Desde aquí solo FOX/Caracol/RCN/DSports</span><span class="toggle-icon fase-toggle-icon">▾</span></div>
 
   <div class="dia-elim">
     <div class="elim-ronda">Sáb 4 Jul · 2 partidos</div>
@@ -1714,7 +1741,7 @@
   </div>
 
   <!-- ════════ CUARTOS ════════ -->
-  <div class="fase-header">Cuartos de Final <span class="fechas">9 jul – 11 jul</span></div>
+  <div class="fase-header" role="button" tabindex="0">Cuartos de Final <span class="fechas">9 jul – 11 jul</span><span class="toggle-icon fase-toggle-icon">▾</span></div>
 
   <div class="dia-elim">
     <div class="elim-ronda">Jue 9 Jul</div>
@@ -1745,7 +1772,7 @@
   </div>
 
   <!-- ════════ SEMIS + FINAL ════════ -->
-  <div class="fase-header">Semifinales · Tercer lugar · Final <span class="fechas">14–19 jul</span></div>
+  <div class="fase-header" role="button" tabindex="0">Semifinales · Tercer lugar · Final <span class="fechas">14–19 jul</span><span class="toggle-icon fase-toggle-icon">▾</span></div>
 
   <div class="dia-elim">
     <div class="elim-ronda">Mar 14 Jul — Semifinal 1</div>
@@ -1911,6 +1938,13 @@
       return;
     }
 
+    // Los 8 mejores terceros lugares clasificados a la Ronda de 32
+    // (confirmado tras el cierre de la fase de grupos, 27 jun 2026)
+    var TERCEROS_CLASIFICADOS = [
+      'Congo RD', 'Ecuador', 'Suecia', 'Ghana',
+      'Bosnia y Herz.', 'Argelia', 'Paraguay', 'Senegal'
+    ];
+
     var letras = Object.keys(data.groups).sort();
     var html = '';
 
@@ -1923,7 +1957,12 @@
       html += '</tr></thead><tbody>';
 
       filas.forEach(function (fila, idx) {
-        var claseRow = idx < 2 ? 'clasificado' : '';
+        var claseRow = '';
+        if (idx < 2) {
+          claseRow = 'clasificado';
+        } else if (idx === 2 && TERCEROS_CLASIFICADOS.indexOf(fila.equipo) !== -1) {
+          claseRow = 'tercero-clasificado';
+        }
         html += '<tr class="' + claseRow + '">';
         html += '<td>' + fila.equipo + '</td>';
         html += '<td>' + fila.pj + '</td>';
@@ -1958,6 +1997,58 @@
       grid.innerHTML = '<div class="grupos-cargando">Tabla de grupos no disponible todavía.</div>';
       subt.textContent = '';
     });
+})();
+</script>
+
+<script>
+(function () {
+  var PREFIX = 'mw26_fase_';
+
+  function getKey(header) {
+    var texto = header.childNodes[0] ? header.childNodes[0].textContent.trim() : '';
+    return PREFIX + texto.replace(/\s+/g, '_').slice(0, 30);
+  }
+
+  function siblingsUntilNextFase(header) {
+    var els = [];
+    var el = header.nextElementSibling;
+    while (el && !el.classList.contains('fase-header')) {
+      els.push(el);
+      el = el.nextElementSibling;
+    }
+    return els;
+  }
+
+  function applyFaseState(header, hijos, collapsed) {
+    if (collapsed) {
+      header.classList.add('collapsed');
+      hijos.forEach(function (el) { el.classList.add('fase-oculto'); });
+    } else {
+      header.classList.remove('collapsed');
+      hijos.forEach(function (el) { el.classList.remove('fase-oculto'); });
+    }
+  }
+
+  document.querySelectorAll('.fase-header').forEach(function (header) {
+    var hijos = siblingsUntilNextFase(header);
+    var key = getKey(header);
+
+    var saved = localStorage.getItem(key);
+    if (saved === 'collapsed') applyFaseState(header, hijos, true);
+
+    header.addEventListener('click', function (e) {
+      var isCollapsed = header.classList.contains('collapsed');
+      applyFaseState(header, hijos, !isCollapsed);
+      localStorage.setItem(key, !isCollapsed ? 'collapsed' : 'open');
+    });
+
+    header.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        header.click();
+      }
+    });
+  });
 })();
 </script>
 </body>
