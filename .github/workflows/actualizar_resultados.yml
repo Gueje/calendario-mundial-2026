@@ -33,5 +33,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add resultados.json
           if [ -f grupos.json ]; then git add grupos.json; fi
+          if [ -f bracket.json ]; then git add bracket.json; fi
           git diff --cached --quiet || git commit -m "chore: resultados actualizados $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
