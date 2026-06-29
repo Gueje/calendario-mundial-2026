@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T21:40:46.376513+00:00",
+  "updated": "2026-06-29T22:58:13.039721+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -20,8 +20,8 @@
       "away": "Paraguay",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "PAUSED",
-      "home_goals": 0,
+      "status": "IN_PLAY",
+      "home_goals": 2,
       "away_goals": 1,
       "pen_home": null,
       "pen_away": null,
