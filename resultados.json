@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T17:36:52.106923+00:00",
+  "updated": "2026-06-29T19:58:04.598763+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -513,8 +513,8 @@
       "pen_away": null
     },
     "Brasil vs Japón": {
-      "status": "IN_PLAY",
-      "home_goals": 0,
+      "status": "FINISHED",
+      "home_goals": 2,
       "away_goals": 1,
       "pen_home": null,
       "pen_away": null

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T17:36:52.107897+00:00",
+  "updated": "2026-06-29T19:58:04.599695+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -46,12 +46,12 @@
       "away": "Japón",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "IN_PLAY",
-      "home_goals": 0,
+      "status": "FINISHED",
+      "home_goals": 2,
       "away_goals": 1,
       "pen_home": null,
       "pen_away": null,
-      "ganador": null
+      "ganador": "Brasil"
     },
     "M77": {
       "ronda": "32",
@@ -237,7 +237,7 @@
       "home_de": "M76",
       "away_fuente": "ganador",
       "away_de": "M78",
-      "home": null,
+      "home": "Brasil",
       "away": null,
       "ganador": null,
       "status": "PENDIENTE"
