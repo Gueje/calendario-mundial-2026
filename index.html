@@ -2286,23 +2286,37 @@
   });
 
   // Orden visual de columnas, izquierda a derecha, igual que la imagen de referencia
+  // Orden verificado contra fifa.com (knockout-stage-match-schedule-bracket)
   var COLUMNAS = [
-    { titulo: 'Ronda de 32',  ids: ['A1','A2','A3','A4','A5','A6','A7','A8'] },
-    { titulo: 'Octavos',      ids: ['QF1','QF2','QF3','QF4'] },
-    { titulo: 'Cuartos',      ids: ['CU1','CU2'] },
-    { titulo: 'Semifinal',    ids: ['SF1'] },
-    { titulo: 'Final',        ids: ['FINAL'], esFinal: true },
-    { titulo: 'Semifinal',    ids: ['SF2'] },
-    { titulo: 'Cuartos',      ids: ['CU3','CU4'] },
-    { titulo: 'Octavos',      ids: ['QF5','QF6','QF7','QF8'] },
-    { titulo: 'Ronda de 32',  ids: ['B1','B2','B3','B4','B5','B6','B7','B8'] },
+    { titulo: 'Ronda de 32',  ids: ['M74','M77','M73','M75','M83','M84','M81','M82'] },
+    { titulo: 'Octavos',      ids: ['M89','M90','M93','M94'] },
+    { titulo: 'Cuartos',      ids: ['M97','M98'] },
+    { titulo: 'Semifinal',    ids: ['M101'] },
+    { titulo: 'Final',        ids: ['M104'], esFinal: true },
+    { titulo: 'Semifinal',    ids: ['M102'] },
+    { titulo: 'Cuartos',      ids: ['M99','M100'] },
+    { titulo: 'Octavos',      ids: ['M91','M92','M95','M96'] },
+    { titulo: 'Ronda de 32',  ids: ['M76','M78','M79','M80','M86','M88','M85','M87'] },
   ];
+
+  // Banderas por equipo, para mostrar antes del nombre
+  var BANDERAS = {
+    'Sudáfrica': '🇿🇦', 'Canadá': '🇨🇦', 'Brasil': '🇧🇷', 'Japón': '🇯🇵',
+    'Alemania': '🇩🇪', 'Paraguay': '🇵🇾', 'Países Bajos': '🇳🇱', 'Marruecos': '🇲🇦',
+    'Costa de Marfil': '🇨🇮', 'Noruega': '🇳🇴', 'Francia': '🇫🇷', 'Suecia': '🇸🇪',
+    'México': '🇲🇽', 'Ecuador': '🇪🇨', 'Inglaterra': '🏴', 'Congo RD': '🇨🇩',
+    'Bélgica': '🇧🇪', 'Senegal': '🇸🇳', 'EE.UU.': '🇺🇸', 'Bosnia y Herz.': '🇧🇦',
+    'España': '🇪🇸', 'Austria': '🇦🇹', 'Portugal': '🇵🇹', 'Croacia': '🇭🇷',
+    'Suiza': '🇨🇭', 'Argelia': '🇩🇿', 'Australia': '🇦🇺', 'Egipto': '🇪🇬',
+    'Argentina': '🇦🇷', 'Cabo Verde': '🇨🇻', 'Colombia': '🇨🇴', 'Ghana': '🇬🇭',
+  };
 
   function renderTeam(nombre, golesEs, esGanador, esLocal) {
     var clase = 'bracket-team';
     if (esGanador) clase += ' ganador';
     if (!nombre) clase += ' pendiente';
-    var texto = nombre || 'Por definir';
+    var bandera = (nombre && BANDERAS[nombre]) ? BANDERAS[nombre] + ' ' : '';
+    var texto = nombre ? (bandera + nombre) : 'Por definir';
     var marcador = (golesEs !== null && golesEs !== undefined) ? '<span class="marcador-bracket">' + golesEs + '</span>' : '';
     return '<div class="' + clase + '"><span class="nombre">' + texto + '</span>' + marcador + '</div>';
   }
@@ -2324,7 +2338,8 @@
 
   function renderFinal(m) {
     var ganador = m && m.ganador;
-    var texto = ganador ? ganador : 'Por definir';
+    var bandera = (ganador && BANDERAS[ganador]) ? BANDERAS[ganador] + ' ' : '';
+    var texto = ganador ? (bandera + ganador) : 'Por definir';
     return '<div class="bracket-final-card">' +
       '<div class="final-label">🏆 Campeón</div>' +
       '<div class="final-team">' + texto + '</div>' +
