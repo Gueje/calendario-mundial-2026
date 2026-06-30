@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T19:58:33.404043+00:00",
+  "updated": "2026-06-30T21:43:10.987756+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -541,9 +541,9 @@
       "pen_away": null
     },
     "Francia vs Suecia": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "IN_PLAY",
+      "home_goals": 0,
+      "away_goals": 0,
       "pen_home": null,
       "pen_away": null
     },
