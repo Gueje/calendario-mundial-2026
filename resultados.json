@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T17:06:16.415599+00:00",
+  "updated": "2026-06-30T19:58:33.404043+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -534,9 +534,9 @@
       "pen_away": 3
     },
     "Costa de Marfil vs Noruega": {
-      "status": "IN_PLAY",
-      "home_goals": 0,
-      "away_goals": 0,
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 2,
       "pen_home": null,
       "pen_away": null
     },
