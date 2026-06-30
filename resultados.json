@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T00:13:35.386974+00:00",
+  "updated": "2026-06-30T05:03:31.421849+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -521,17 +521,17 @@
     },
     "Alemania vs Paraguay": {
       "status": "FINISHED",
-      "home_goals": 5,
-      "away_goals": 6,
-      "pen_home": 5,
-      "pen_away": 5
+      "home_goals": 4,
+      "away_goals": 5,
+      "pen_home": 4,
+      "pen_away": 4
     },
     "Países Bajos vs Marruecos": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
-      "pen_home": null,
-      "pen_away": null
+      "status": "FINISHED",
+      "home_goals": 4,
+      "away_goals": 4,
+      "pen_home": 3,
+      "pen_away": 3
     },
     "Costa de Marfil vs Noruega": {
       "status": "TIMED",
