@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T22:58:13.039721+00:00",
+  "updated": "2026-06-30T00:13:35.387768+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -20,12 +20,12 @@
       "away": "Paraguay",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "IN_PLAY",
-      "home_goals": 2,
-      "away_goals": 1,
-      "pen_home": null,
-      "pen_away": null,
-      "ganador": null
+      "status": "FINISHED",
+      "home_goals": 5,
+      "away_goals": 6,
+      "pen_home": 5,
+      "pen_away": 5,
+      "ganador": "Paraguay"
     },
     "M75": {
       "ronda": "32",
@@ -215,7 +215,7 @@
       "home_de": "M74",
       "away_fuente": "ganador",
       "away_de": "M77",
-      "home": null,
+      "home": "Paraguay",
       "away": null,
       "ganador": null,
       "status": "PENDIENTE"
