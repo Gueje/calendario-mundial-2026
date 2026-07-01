@@ -2114,9 +2114,15 @@
         var status = match.status;
         var hg     = match.home_goals;
         var ag     = match.away_goals;
+        var ph     = match.pen_home;
+        var pa     = match.pen_away;
 
         if (status === 'FINISHED' && hg !== null && ag !== null) {
-          el.textContent = hg + ' - ' + ag;
+          var texto = hg + ' - ' + ag;
+          if (ph !== null && ph !== undefined && pa !== null && pa !== undefined) {
+            texto += ' (' + ph + '-' + pa + ' pen)';
+          }
+          el.textContent = texto;
           el.classList.add('finalizado');
         }
         // SCHEDULED: no mostrar nada
@@ -2331,12 +2337,17 @@
     var home = m.home, away = m.away;
     var hg = (m.status === 'FINISHED') ? m.home_goals : null;
     var ag = (m.status === 'FINISHED') ? m.away_goals : null;
+    var ph = (m.status === 'FINISHED') ? m.pen_home : null;
+    var pa = (m.status === 'FINISHED') ? m.pen_away : null;
+    // Si hay penales, mostrar el marcador de penales junto a cada equipo
+    var hg_display = (hg !== null) ? hg + (ph !== null && ph !== undefined ? ' (' + ph + ')' : '') : null;
+    var ag_display = (ag !== null) ? ag + (pa !== null && pa !== undefined ? ' (' + pa + ')' : '') : null;
     var ganadorHome = m.ganador && m.ganador === home;
     var ganadorAway = m.ganador && m.ganador === away;
 
     return '<div class="bracket-match">' +
-      renderTeam(home, hg, ganadorHome, true) +
-      renderTeam(away, ag, ganadorAway, false) +
+      renderTeam(home, hg_display, ganadorHome, true) +
+      renderTeam(away, ag_display, ganadorAway, false) +
       '</div>';
   }
 
