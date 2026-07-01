@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T23:13:15.440628+00:00",
+  "updated": "2026-07-01T03:55:48.357966+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -85,9 +85,9 @@
       "away": "Ecuador",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "IN_PLAY",
+      "home_goals": 2,
+      "away_goals": 0,
       "pen_home": null,
       "pen_away": null,
       "ganador": null
