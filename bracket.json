@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T15:22:38.639971+00:00",
+  "updated": "2026-07-01T17:13:29.806948+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -98,9 +98,9 @@
       "away": "Congo RD",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "LIVE",
+      "home_goals": 0,
+      "away_goals": 1,
       "pen_home": null,
       "pen_away": null,
       "ganador": null
