@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T21:39:46.116928+00:00",
+  "updated": "2026-07-01T23:15:59.419552+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -562,8 +562,8 @@
       "pen_away": null
     },
     "Bélgica vs Senegal": {
-      "status": "IN_PLAY",
-      "home_goals": 0,
+      "status": "FINISHED",
+      "home_goals": 3,
       "away_goals": 2,
       "pen_home": null,
       "pen_away": null
