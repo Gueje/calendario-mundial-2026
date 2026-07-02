@@ -330,6 +330,13 @@ def main():
         pen_h  = pen.get("home")
         pen_a  = pen.get("away")
 
+        # football-data.org incluye los goles de penales dentro de fullTime.
+        # Cuando hay tanda de penales, restamos para obtener el marcador real
+        # del partido (90min + tiempo extra, sin contar los penales).
+        if pen_h is not None and pen_a is not None and hg is not None and ag is not None:
+            hg = hg - pen_h
+            ag = ag - pen_a
+
         # Si el orden de la API es inverso al del HTML, voltear los goles y penales
         if mid in IDS_INVERTIDOS:
             hg, ag = ag, hg
