@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T18:25:00.426180+00:00",
+  "updated": "2026-07-02T20:18:24.953491+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -150,9 +150,9 @@
       "away": "Austria",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "IN_PLAY",
+      "home_goals": 1,
+      "away_goals": 0,
       "pen_home": null,
       "pen_away": null,
       "ganador": null
