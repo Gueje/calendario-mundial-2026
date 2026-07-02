@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T00:44:40.667004+00:00",
+  "updated": "2026-07-02T03:36:46.542126+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -111,12 +111,12 @@
       "away": "Bosnia y Herz.",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "IN_PLAY",
-      "home_goals": 0,
+      "status": "FINISHED",
+      "home_goals": 2,
       "away_goals": 0,
       "pen_home": null,
       "pen_away": null,
-      "ganador": null
+      "ganador": "EE.UU."
     },
     "M82": {
       "ronda": "32",
@@ -270,10 +270,10 @@
       "home_de": "M81",
       "away_fuente": "ganador",
       "away_de": "M82",
-      "home": null,
+      "home": "EE.UU.",
       "away": "Bélgica",
       "ganador": null,
-      "status": "PENDIENTE"
+      "status": "SCHEDULED"
     },
     "M95": {
       "ronda": "16",
