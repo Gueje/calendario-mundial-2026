@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T18:12:23.144541+00:00",
+  "updated": "2026-07-03T20:13:51.941335+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -598,8 +598,8 @@
     },
     "Australia vs Egipto": {
       "status": "IN_PLAY",
-      "home_goals": 0,
-      "away_goals": 0,
+      "home_goals": 1,
+      "away_goals": 1,
       "pen_home": null,
       "pen_away": null
     },
