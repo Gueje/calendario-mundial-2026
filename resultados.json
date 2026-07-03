@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T00:05:14.629540+00:00",
+  "updated": "2026-07-03T04:41:18.532232+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -583,16 +583,16 @@
       "pen_away": null
     },
     "Portugal vs Croacia": {
-      "status": "PAUSED",
-      "home_goals": 0,
-      "away_goals": 0,
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 1,
       "pen_home": null,
       "pen_away": null
     },
     "Suiza vs Argelia": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "IN_PLAY",
+      "home_goals": 2,
+      "away_goals": 0,
       "pen_home": null,
       "pen_away": null
     },

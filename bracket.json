@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T00:05:14.633544+00:00",
+  "updated": "2026-07-03T04:41:18.533179+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -137,12 +137,12 @@
       "away": "Croacia",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "PAUSED",
-      "home_goals": 0,
-      "away_goals": 0,
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 1,
       "pen_home": null,
       "pen_away": null,
-      "ganador": null
+      "ganador": "Portugal"
     },
     "M84": {
       "ronda": "32",
@@ -163,9 +163,9 @@
       "away": "Argelia",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "IN_PLAY",
+      "home_goals": 2,
+      "away_goals": 0,
       "pen_home": null,
       "pen_away": null,
       "ganador": null
@@ -259,10 +259,10 @@
       "home_de": "M83",
       "away_fuente": "ganador",
       "away_de": "M84",
-      "home": null,
+      "home": "Portugal",
       "away": "España",
       "ganador": null,
-      "status": "PENDIENTE"
+      "status": "SCHEDULED"
     },
     "M94": {
       "ronda": "16",
