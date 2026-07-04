@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T18:01:28.447517+00:00",
+  "updated": "2026-07-04T20:08:28.893602+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -618,9 +618,9 @@
       "pen_away": null
     },
     "Canadá vs Marruecos": {
-      "status": "PAUSED",
+      "status": "FINISHED",
       "home_goals": 0,
-      "away_goals": 0,
+      "away_goals": 3,
       "pen_home": null,
       "pen_away": null
     },
