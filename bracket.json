@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T00:04:06.497938+00:00",
+  "updated": "2026-07-04T04:34:44.814261+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -176,12 +176,12 @@
       "away": "Cabo Verde",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "IN_PLAY",
-      "home_goals": 1,
-      "away_goals": 1,
+      "status": "FINISHED",
+      "home_goals": 3,
+      "away_goals": 2,
       "pen_home": null,
       "pen_away": null,
-      "ganador": null
+      "ganador": "Argentina"
     },
     "M87": {
       "ronda": "32",
@@ -189,12 +189,12 @@
       "away": "Ghana",
       "home_fuente": "fijo",
       "away_fuente": "fijo",
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 0,
       "pen_home": null,
       "pen_away": null,
-      "ganador": null
+      "ganador": "Colombia"
     },
     "M88": {
       "ronda": "32",
@@ -281,10 +281,10 @@
       "home_de": "M86",
       "away_fuente": "ganador",
       "away_de": "M88",
-      "home": null,
+      "home": "Argentina",
       "away": "Egipto",
       "ganador": null,
-      "status": "PENDIENTE"
+      "status": "SCHEDULED"
     },
     "M96": {
       "ronda": "16",
@@ -293,9 +293,9 @@
       "away_fuente": "ganador",
       "away_de": "M87",
       "home": "Suiza",
-      "away": null,
+      "away": "Colombia",
       "ganador": null,
-      "status": "PENDIENTE"
+      "status": "SCHEDULED"
     },
     "M97": {
       "ronda": "8",
