@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T04:34:44.813290+00:00",
+  "updated": "2026-07-04T16:14:21.359291+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -598,9 +598,9 @@
     },
     "Australia vs Egipto": {
       "status": "FINISHED",
-      "home_goals": -1,
+      "home_goals": 1,
       "away_goals": 1,
-      "pen_home": 4,
+      "pen_home": 2,
       "pen_away": 4
     },
     "Argentina vs Cabo Verde": {
@@ -614,6 +614,62 @@
       "status": "FINISHED",
       "home_goals": 1,
       "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Canadá vs Marruecos": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Paraguay vs Francia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Brasil vs Noruega": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "México vs Inglaterra": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Portugal vs España": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "EE.UU. vs Bélgica": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Argentina vs Egipto": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Suiza vs Colombia": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
       "pen_home": null,
       "pen_away": null
     }

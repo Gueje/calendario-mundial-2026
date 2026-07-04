@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T04:34:44.814261+00:00",
+  "updated": "2026-07-04T16:14:21.360343+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -203,9 +203,9 @@
       "home_fuente": "fijo",
       "away_fuente": "fijo",
       "status": "FINISHED",
-      "home_goals": -1,
+      "home_goals": 1,
       "away_goals": 1,
-      "pen_home": 4,
+      "pen_home": 2,
       "pen_away": 4,
       "ganador": "Egipto"
     },
@@ -218,7 +218,11 @@
       "home": "Paraguay",
       "away": "Francia",
       "ganador": null,
-      "status": "SCHEDULED"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M90": {
       "ronda": "16",
@@ -229,7 +233,11 @@
       "home": "Canadá",
       "away": "Marruecos",
       "ganador": null,
-      "status": "SCHEDULED"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M91": {
       "ronda": "16",
@@ -240,7 +248,11 @@
       "home": "Brasil",
       "away": "Noruega",
       "ganador": null,
-      "status": "SCHEDULED"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M92": {
       "ronda": "16",
@@ -251,7 +263,11 @@
       "home": "México",
       "away": "Inglaterra",
       "ganador": null,
-      "status": "SCHEDULED"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M93": {
       "ronda": "16",
@@ -262,7 +278,11 @@
       "home": "Portugal",
       "away": "España",
       "ganador": null,
-      "status": "SCHEDULED"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M94": {
       "ronda": "16",
@@ -273,7 +293,11 @@
       "home": "EE.UU.",
       "away": "Bélgica",
       "ganador": null,
-      "status": "SCHEDULED"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M95": {
       "ronda": "16",
@@ -284,7 +308,11 @@
       "home": "Argentina",
       "away": "Egipto",
       "ganador": null,
-      "status": "SCHEDULED"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M96": {
       "ronda": "16",
@@ -295,7 +323,11 @@
       "home": "Suiza",
       "away": "Colombia",
       "ganador": null,
-      "status": "SCHEDULED"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M97": {
       "ronda": "8",
