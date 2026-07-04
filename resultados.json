@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04T21:58:14.475866+00:00",
+  "updated": "2026-07-04T23:04:54.126302+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -625,9 +625,9 @@
       "pen_away": null
     },
     "Paraguay vs Francia": {
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "home_goals": 0,
-      "away_goals": 0,
+      "away_goals": 1,
       "pen_home": null,
       "pen_away": null
     },
