@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T17:43:32.023924+00:00",
+  "updated": "2026-07-06T19:57:15.713506+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -646,9 +646,9 @@
       "pen_away": null
     },
     "Portugal vs España": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "PAUSED",
+      "home_goals": 0,
+      "away_goals": 0,
       "pen_home": null,
       "pen_away": null
     },
