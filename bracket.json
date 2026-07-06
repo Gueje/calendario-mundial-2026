@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T22:01:54.006843+00:00",
+  "updated": "2026-07-06T00:05:41.608706+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -247,9 +247,9 @@
       "away_de": "M78",
       "home": "Brasil",
       "away": "Noruega",
-      "ganador": null,
-      "status": "LIVE",
-      "home_goals": 0,
+      "ganador": "Noruega",
+      "status": "FINISHED",
+      "home_goals": 1,
       "away_goals": 2,
       "pen_home": null,
       "pen_away": null
@@ -263,7 +263,7 @@
       "home": "México",
       "away": "Inglaterra",
       "ganador": null,
-      "status": "TIMED",
+      "status": "2026-07-06 01:00:00Z",
       "home_goals": null,
       "away_goals": null,
       "pen_home": null,
@@ -357,7 +357,7 @@
       "home_de": "M91",
       "away_fuente": "ganador",
       "away_de": "M92",
-      "home": null,
+      "home": "Noruega",
       "away": null,
       "ganador": null,
       "status": "PENDIENTE"
