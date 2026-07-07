@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T23:08:04.084973+00:00",
+  "updated": "2026-07-07T03:24:01.180092+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -292,10 +292,10 @@
       "away_de": "M82",
       "home": "EE.UU.",
       "away": "Bélgica",
-      "ganador": null,
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "ganador": "Bélgica",
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 4,
       "pen_home": null,
       "pen_away": null
     },
@@ -347,9 +347,9 @@
       "away_fuente": "ganador",
       "away_de": "M94",
       "home": "España",
-      "away": null,
+      "away": "Bélgica",
       "ganador": null,
-      "status": "PENDIENTE"
+      "status": "SCHEDULED"
     },
     "M99": {
       "ronda": "8",
