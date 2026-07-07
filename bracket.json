@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T21:25:03.603207+00:00",
+  "updated": "2026-07-07T23:01:18.992132+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -322,12 +322,12 @@
       "away_de": "M87",
       "home": "Suiza",
       "away": "Colombia",
-      "ganador": null,
-      "status": "IN_PLAY",
-      "home_goals": 0,
+      "ganador": "Suiza",
+      "status": "FINISHED",
+      "home_goals": 1,
       "away_goals": 0,
-      "pen_home": null,
-      "pen_away": null
+      "pen_home": 3,
+      "pen_away": 3
     },
     "M97": {
       "ronda": "8",
@@ -369,9 +369,9 @@
       "away_fuente": "ganador",
       "away_de": "M96",
       "home": "Argentina",
-      "away": null,
+      "away": "Suiza",
       "ganador": null,
-      "status": "PENDIENTE"
+      "status": "SCHEDULED"
     },
     "M101": {
       "ronda": "4",
