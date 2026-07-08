@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T02:41:49.971206+00:00",
+  "updated": "2026-07-08T16:39:12.118546+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -668,9 +668,9 @@
     },
     "Suiza vs Colombia": {
       "status": "FINISHED",
-      "home_goals": 1,
+      "home_goals": 0,
       "away_goals": 0,
-      "pen_home": 3,
+      "pen_home": 4,
       "pen_away": 3
     }
   }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T02:41:49.972337+00:00",
+  "updated": "2026-07-08T16:39:12.119608+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -324,9 +324,9 @@
       "away": "Colombia",
       "ganador": "Suiza",
       "status": "FINISHED",
-      "home_goals": 1,
+      "home_goals": 0,
       "away_goals": 0,
-      "pen_home": 3,
+      "pen_home": 4,
       "pen_away": 3
     },
     "M97": {
