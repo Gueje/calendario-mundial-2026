@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T18:07:33.629943+00:00",
+  "updated": "2026-07-15T20:08:19.011341+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -709,9 +709,9 @@
       "pen_away": null
     },
     "Inglaterra vs Argentina": {
-      "status": "TIMED",
-      "home_goals": null,
-      "away_goals": null,
+      "status": "PAUSED",
+      "home_goals": 0,
+      "away_goals": 0,
       "pen_home": null,
       "pen_away": null
     }
