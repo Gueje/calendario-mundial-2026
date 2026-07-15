@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T17:03:08.524399+00:00",
+  "updated": "2026-07-15T01:04:40.650971+00:00",
   "matches": {
     "México vs Sudáfrica": {
       "status": "FINISHED",
@@ -672,6 +672,48 @@
       "away_goals": 0,
       "pen_home": 4,
       "pen_away": 3
+    },
+    "Francia vs Marruecos": {
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "España vs Bélgica": {
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Noruega vs Inglaterra": {
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Argentina vs Suiza": {
+      "status": "FINISHED",
+      "home_goals": 3,
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Francia vs España": {
+      "status": "FINISHED",
+      "home_goals": 0,
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
+    },
+    "Inglaterra vs Argentina": {
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     }
   }
 }

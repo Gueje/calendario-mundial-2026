@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T17:03:08.525261+00:00",
+  "updated": "2026-07-15T01:04:40.652013+00:00",
   "matches": {
     "M73": {
       "ronda": "32",
@@ -337,8 +337,12 @@
       "away_de": "M90",
       "home": "Francia",
       "away": "Marruecos",
-      "ganador": null,
-      "status": "SCHEDULED"
+      "ganador": "Francia",
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 0,
+      "pen_home": null,
+      "pen_away": null
     },
     "M98": {
       "ronda": "8",
@@ -348,8 +352,12 @@
       "away_de": "M94",
       "home": "España",
       "away": "Bélgica",
-      "ganador": null,
-      "status": "SCHEDULED"
+      "ganador": "España",
+      "status": "FINISHED",
+      "home_goals": 2,
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "M99": {
       "ronda": "8",
@@ -359,8 +367,12 @@
       "away_de": "M92",
       "home": "Noruega",
       "away": "Inglaterra",
-      "ganador": null,
-      "status": "SCHEDULED"
+      "ganador": "Inglaterra",
+      "status": "FINISHED",
+      "home_goals": 1,
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "M100": {
       "ronda": "8",
@@ -370,8 +382,12 @@
       "away_de": "M96",
       "home": "Argentina",
       "away": "Suiza",
-      "ganador": null,
-      "status": "SCHEDULED"
+      "ganador": "Argentina",
+      "status": "FINISHED",
+      "home_goals": 3,
+      "away_goals": 1,
+      "pen_home": null,
+      "pen_away": null
     },
     "M101": {
       "ronda": "4",
@@ -379,10 +395,14 @@
       "home_de": "M97",
       "away_fuente": "ganador",
       "away_de": "M98",
-      "home": null,
-      "away": null,
-      "ganador": null,
-      "status": "PENDIENTE"
+      "home": "Francia",
+      "away": "España",
+      "ganador": "España",
+      "status": "FINISHED",
+      "home_goals": 0,
+      "away_goals": 2,
+      "pen_home": null,
+      "pen_away": null
     },
     "M102": {
       "ronda": "4",
@@ -390,10 +410,14 @@
       "home_de": "M99",
       "away_fuente": "ganador",
       "away_de": "M100",
-      "home": null,
-      "away": null,
+      "home": "Inglaterra",
+      "away": "Argentina",
       "ganador": null,
-      "status": "PENDIENTE"
+      "status": "TIMED",
+      "home_goals": null,
+      "away_goals": null,
+      "pen_home": null,
+      "pen_away": null
     },
     "M104": {
       "ronda": "1",
@@ -401,7 +425,7 @@
       "home_de": "M101",
       "away_fuente": "ganador",
       "away_de": "M102",
-      "home": null,
+      "home": "España",
       "away": null,
       "ganador": null,
       "status": "PENDIENTE"
